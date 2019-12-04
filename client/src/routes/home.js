@@ -1,4 +1,4 @@
-import Home from '../modules/home/Home';
+import Home from '../modules/Home/Home';
 
 // Home routes
 export default {
@@ -6,6 +6,6 @@ export default {
         path: '/',
         component: Home,
         exact: true,
-        auth: false
+        auth: false,
     },
-}
+};
