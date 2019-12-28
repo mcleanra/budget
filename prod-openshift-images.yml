@@ -1,0 +1,12 @@
+version: '3'
+services:
+    client:
+        image: quay.agilesof.com/soceur/node:alpine
+    api:
+        image: quay.agilesof.com/soceur/node:alpine
+    mongodb:
+        image: quay.agilesof.com/soceur/mongo:latest
+    nginx:
+        image: quay.agilesof.com/soceur/nginx:latest
+    cac:
+        image: quay.agilesof.com/soceur/nginx:latest
