@@ -29,15 +29,15 @@ services:
         image: quay.agilesof.com/soceur/nginx:latest
         restart: always
         build:
-            context: ./nginx
-            dockerfile: Dockerfile
+            context: ./
+            dockerfile: ./nginx/Dockerfile
         ports:
             - '8000:443'
     cac:
         image: quay.agilesof.com/soceur/nginx:latest
         restart: always
         build:
-            context: ./cac
-            dockerfile: Dockerfile
+            context: ./
+            dockerfile: ./cac/Dockerfile
         ports:
             - '7000:443'
