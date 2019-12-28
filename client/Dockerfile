@@ -4,7 +4,7 @@ FROM node
 WORKDIR '/'
 COPY ./client/package.json ./packages/client/package.json
 COPY ./shared/package.json ./packages/shared/package.json
-COPY ./client/package.json ./
+COPY ./package.json .
 RUN yarn
 
 COPY ./client ./packages/client

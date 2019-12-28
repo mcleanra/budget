@@ -3,7 +3,7 @@ FROM node:alpine
 ## setup yarn workspace inside container
 COPY ./api/package.json ./packages/api/package.json
 COPY ./shared/package.json ./packages/shared/package.json
-COPY ./api/package.json .
+COPY ./package.json .
 RUN yarn
 
 COPY ./api ./packages/api
