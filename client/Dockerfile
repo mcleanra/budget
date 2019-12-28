@@ -1,0 +1,16 @@
+FROM node
+
+## setup yarn workspace inside container
+WORKDIR '/'
+COPY package.json ./packages/client/package.json
+COPY ../shared/package.json ./packages/shared/package.json
+COPY package.json ./
+RUN yarn
+
+COPY . ./packages/client
+COPY ../shared ./packages/shared
+
+WORKDIR '/packages/client'
+
+##CMD ["sleep", "20000"]
+CMD ["npm", "start"]

@@ -1,0 +1,21 @@
+FROM node
+
+## setup yarn workspace inside container
+WORKDIR '/'
+COPY package.json ./packages/api/package.json
+COPY ../shared/package.json ./packages/shared/package.json
+COPY package.json ./
+RUN yarn
+
+COPY . ./packages/api
+COPY ../shared ./packages/shared
+
+## THE LIFE SAVER
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+
+WORKDIR '/packages/api'
+## CMD ["sleep", "20000"]
+
+## Launch the wait tool and then your application
+CMD /wait && npm run dev
