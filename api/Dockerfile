@@ -1,14 +1,13 @@
-FROM node
+FROM node:alpine
 
 ## setup yarn workspace inside container
-WORKDIR '/'
-COPY package.json ./packages/api/package.json
-COPY ../shared/package.json ./packages/shared/package.json
-COPY package.json ./
+COPY ./api/package.json ./packages/api/package.json
+COPY ./shared/package.json ./packages/shared/package.json
+COPY ./api/package.json .
 RUN yarn
 
-COPY . ./packages/api
-COPY ../shared ./packages/shared
+COPY ./api ./packages/api
+COPY ./shared ./packages/shared
 
 ## THE LIFE SAVER
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait

@@ -5,8 +5,8 @@ version: '3'
 services:
     client:
         build:
-            context: https://github.com/mcleanra/budget.git#docker-prod:client
-            dockerfile: Dockerfile
+            context: https://github.com/mcleanra/budget.git#docker-prod
+            dockerfile: ./client/Dockerfile
         volumes:
             - /packages/client/node_modules
             - ./client:/packages/client
@@ -15,8 +15,8 @@ services:
             - CHOKIDAR_USEPOLLING=true
     api:
         build:
-            context: https://github.com/mcleanra/budget.git#docker-prod:api
-            dockerfile: Dockerfile
+            context: https://github.com/mcleanra/budget.git#docker-prod
+            dockerfile: ./api/Dockerfile
         volumes:
             - /packages/api/node_modules
             - ./api:/packages/api
@@ -35,8 +35,8 @@ services:
     nginx:
         restart: always
         build:
-            context: https://github.com/mcleanra/budget.git#docker-prod:nginx
-            dockerfile: Dockerfile
+            context: https://github.com/mcleanra/budget.git#docker-prod
+            dockerfile: ./nginx/Dockerfile
         ports:
             - '8000:443'
         volumes:
@@ -44,8 +44,8 @@ services:
     cac:
         restart: always
         build:
-            context: https://github.com/mcleanra/budget.git#docker-prod:cac
-            dockerfile: Dockerfile
+            context: https://github.com/mcleanra/budget.git#docker-prod
+            dockerfile: ./cac/Dockerfile
         ports:
             - '7000:443'
         volumes:

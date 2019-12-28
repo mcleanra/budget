@@ -2,7 +2,7 @@ FROM nginx
 
 WORKDIR '/'
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 RUN mkdir -p /run/nginx /www/data
 
@@ -10,12 +10,12 @@ RUN mkdir -p /run/nginx /www/data
 #COPY default.conf /etc/nginx/conf.d/default.conf
 
 # self-signed server cert
-COPY certificate.pem /etc/nginx
+COPY ./nginx/certificate.pem /etc/nginx
 
 # self-signed server privkey
-COPY key.pem         /etc/nginx
+COPY ./nginx/key.pem         /etc/nginx
 
 # https://github.com/mpyne-navy/nginx-cac/blob/master/Makefile
-COPY DoDRoots.crt    /etc/nginx
+COPY ./nginx/DoDRoots.crt    /etc/nginx
 
 ENTRYPOINT ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]
