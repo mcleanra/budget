@@ -1,4 +1,4 @@
-FROM node
+FROM quay.agilesof.com/soceur/node:alpine
 
 ## setup yarn workspace inside container
 COPY ./api/package.json ./packages/api/package.json

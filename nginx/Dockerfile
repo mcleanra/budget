@@ -1,4 +1,4 @@
-FROM nginx
+FROM quay.agilesof.com/soceur/nginx:latest
 
 WORKDIR '/'
 
