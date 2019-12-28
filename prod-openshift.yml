@@ -1,0 +1,43 @@
+version: '3'
+services:
+    client:
+        image: quay.agilesof.com/soceur/node:alpine
+        build:
+            context: ./
+            dockerfile: ./client/Dockerfile
+        ports:
+            - '3000:3000'
+    api:
+        image: quay.agilesof.com/soceur/node:alpine
+        build:
+            context: ./
+            dockerfile: ./api/Dockerfile
+        depends_on:
+            - mongodb
+        environment:
+            WAIT_HOSTS: mongodb:27017
+        links:
+            - mongodb
+    mongodb:
+        image: quay.agilesof.com/soceur/mongo:latest
+        ports:
+            - 27017:27017
+        command: mongod --noauth
+        volumes:
+            - mongodata:/data/db
+    nginx:
+        image: quay.agilesof.com/soceur/nginx:latest
+        restart: always
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        ports:
+            - '8000:443'
+    cac:
+        image: quay.agilesof.com/soceur/nginx:latest
+        restart: always
+        build:
+            context: ./cac
+            dockerfile: Dockerfile
+        ports:
+            - '7000:443'
