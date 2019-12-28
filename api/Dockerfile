@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node
 
 ## setup yarn workspace inside container
 COPY ./api/package.json ./packages/api/package.json
