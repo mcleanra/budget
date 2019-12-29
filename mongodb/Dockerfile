@@ -1,6 +1,6 @@
 FROM quay.agilesof.com/soceur/mongo:3.6.15-xenial
 
-RUN chmod g+rwx /data/db /var/log
+RUN chmod g+rwx /data/db /var/log/mongodb
 
 COPY ./mongodb/etc/mongod.conf /etc/mongod.conf
 
