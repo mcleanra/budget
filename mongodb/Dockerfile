@@ -1,8 +1,6 @@
 FROM quay.agilesof.com/soceur/mongo:3.6.15-xenial
 
-RUN touch /var/log/mongodb/mongod.log
-
-RUN chmod 777 /data/db /var/log/mongodb
+RUN chmod 777 /data/db /var/log
 
 COPY ./mongodb/etc/mongod.conf /etc/mongod.conf
 
