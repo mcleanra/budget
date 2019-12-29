@@ -23,5 +23,3 @@ COPY ./cac/key.pem         /etc/nginx
 COPY ./cac/DoDRoots.crt    /etc/nginx
 
 ENTRYPOINT [ "sh", "-c", "/nginx_entrypoint.sh" ]
-
-CMD ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]
