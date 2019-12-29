@@ -30,7 +30,7 @@ services:
             context: ./nginx
             dockerfile: Dockerfile
         ports:
-            - '8000:443'
+            - '8000:8443'
     cac:
         image: redoubt.azurecr.us/nginx:latest
         restart: always
@@ -38,4 +38,4 @@ services:
             context: ./cac
             dockerfile: Dockerfile
         ports:
-            - '7000:443'
+            - '7000:8443'
