@@ -3,7 +3,7 @@ FROM nginx:latest
 RUN mkdir -p /run/nginx /www/data
 
 # Provided in this Docker package, and relatively simple configs
-COPY ./cac/default.template /etc/nginx/conf.d/default.template
+COPY ./cac/default.template.conf /etc/nginx/conf.d/default.template.conf
 
 #this script pulls the dns server out of /etc/resolv.conf so we can
 #use it as the nginx resolver
