@@ -12,6 +12,8 @@ services:
             - ./shared:/packages/shared
         environment:
             - CHOKIDAR_USEPOLLING=true
+        ports:
+            - '3000:3000'
     api:
         image: quay.agilesof.com/soceur/node:alpine
         build: ./api
@@ -25,6 +27,8 @@ services:
             WAIT_HOSTS: mongodb:27017
         links:
             - mongodb
+        ports:
+            - '9000:9000'
     mongodb:
         image: quay.agilesof.com/soceur/mongo:latest
         ports:
