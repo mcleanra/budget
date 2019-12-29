@@ -25,10 +25,15 @@ services:
         links:
             - mongodb
     mongodb:
-        image: mongo
+        restart: always
+        build:
+            context: ./
+            dockerfile: ./mongodb/Dockerfile
         ports:
             - 27017:27017
-        command: mongod --noauth
+        volumes:
+            - ./mongodb/etc/mongod.conf:/etc/mongod.conf
+            - ./mongodb/var/log/mongodb:/var/log/mongodb/
     nginx:
         restart: always
         build:
