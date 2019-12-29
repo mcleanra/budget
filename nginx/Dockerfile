@@ -5,16 +5,16 @@ RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
 
 WORKDIR '/'
 
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-
-#pull the name server out of resolv.conf and paste it into the resolver directive
-#because the name server can be different between docker/openshift/azure/etc
-RUN envsubst '${DNS_SERVER} < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf'
-
 RUN mkdir -p /run/nginx /www/data
 
 # Provided in this Docker package, and relatively simple configs
-#COPY default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/default.template.conf /etc/nginx/conf.d/default.template.conf
+
+#this script pulls the dns server out of /etc/resolv.conf so we can
+#use it as the nginx resolver
+COPY ./shared/get_dns.sh /get_dns.sh
+COPY ./shared/nginx_entrypoint.sh /nginx_entrypoint.sh
+RUN chmod +x /get_dns.sh /nginx_entrypoint.sh
 
 # self-signed server cert
 COPY ./nginx/certificate.pem /etc/nginx
@@ -25,4 +25,4 @@ COPY ./nginx/key.pem         /etc/nginx
 # https://github.com/mpyne-navy/nginx-cac/blob/master/Makefile
 COPY ./nginx/DoDRoots.crt    /etc/nginx
 
-ENTRYPOINT ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]
+ENTRYPOINT [ "sh", "-c", "/nginx_entrypoint.sh" ]

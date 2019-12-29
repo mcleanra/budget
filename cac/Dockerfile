@@ -8,14 +8,13 @@ WORKDIR '/'
 RUN mkdir -p /run/nginx /www/data
 
 # Provided in this Docker package, and relatively simple configs
-COPY ./cac/default.conf /etc/nginx/conf.d/default.conf
+COPY ./cac/default.template.conf /etc/nginx/conf.d/default.template.conf
 
-#pull the name server out of resolv.conf and paste it into the resolver directive
-#because the name server can be different between docker/openshift/azure/etc
-RUN export DNS_SERVER=$(cat /etc/resolv.conf |grep -i '^nameserver'|head -n1|cut -d ' ' -f2)
-RUN envsubst '${DNS_SERVER} < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf'
-
-#COPY index.html   /www/data/index.html
+#this script pulls the dns server out of /etc/resolv.conf so we can
+#use it as the nginx resolver
+COPY ./shared/get_dns.sh /get_dns.sh
+COPY ./shared/nginx_entrypoint.sh /nginx_entrypoint.sh
+RUN chmod +x /get_dns.sh /nginx_entrypoint.sh
 
 COPY ./cac/jquery.min.js /www/data/jquery.min.js
 
@@ -28,4 +27,4 @@ COPY ./cac/key.pem         /etc/nginx
 # https://github.com/mpyne-navy/nginx-cac/blob/master/Makefile
 COPY ./cac/DoDRoots.crt    /etc/nginx
 
-ENTRYPOINT ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]
+ENTRYPOINT [ "sh", "-c", "/nginx_entrypoint.sh" ]
