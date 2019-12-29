@@ -3,7 +3,14 @@ FROM nginx:latest
 RUN mkdir -p /run/nginx /www/data
 
 # Provided in this Docker package, and relatively simple configs
-COPY ./cac/default.conf /etc/nginx/conf.d/default.conf
+COPY ./cac/default.conf /etc/nginx/conf.d/default.template
+
+#this script pulls the dns server out of /etc/resolv.conf so we can
+#use it as the nginx resolver
+COPY ./shared/get_dns.sh /get_dns.sh
+COPY ./shared/nginx_entrypoint.sh /nginx_entrypoint.sh
+RUN chmod +x /get_dns.sh /nginx_entrypoint.sh
+
 COPY ./cac/jquery.min.js /www/data/jquery.min.js
 
 # self-signed server cert
@@ -15,4 +22,6 @@ COPY ./cac/key.pem         /etc/nginx
 # https://github.com/mpyne-navy/nginx-cac/blob/master/Makefile
 COPY ./cac/DoDRoots.crt    /etc/nginx
 
-ENTRYPOINT ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]
+ENTRYPOINT [ "sh", "-c", "/nginx_entrypoint.sh" ]
+
+CMD ["/usr/sbin/nginx", "-q", "-g", "daemon off;"]

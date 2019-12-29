@@ -10,6 +10,11 @@ RUN mkdir -p /run/nginx /www/data
 # Provided in this Docker package, and relatively simple configs
 COPY ./cac/default.conf /etc/nginx/conf.d/default.conf
 
+#pull the name server out of resolv.conf and paste it into the resolver directive
+#because the name server can be different between docker/openshift/azure/etc
+RUN export DNS_SERVER=$(cat /etc/resolv.conf |grep -i '^nameserver'|head -n1|cut -d ' ' -f2)
+RUN envsubst '${DNS_SERVER} < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf'
+
 #COPY index.html   /www/data/index.html
 
 COPY ./cac/jquery.min.js /www/data/jquery.min.js

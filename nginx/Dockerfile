@@ -7,6 +7,10 @@ WORKDIR '/'
 
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
+#pull the name server out of resolv.conf and paste it into the resolver directive
+#because the name server can be different between docker/openshift/azure/etc
+RUN envsubst '${DNS_SERVER} < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf'
+
 RUN mkdir -p /run/nginx /www/data
 
 # Provided in this Docker package, and relatively simple configs
