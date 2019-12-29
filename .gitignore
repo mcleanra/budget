@@ -2,3 +2,5 @@
 .DS_Store
 data-node
 node_modules
+
+mongodb/var/log/**
