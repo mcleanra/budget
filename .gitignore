@@ -3,4 +3,5 @@
 data-node
 node_modules
 
-mongodb/var/log/**
+#this is just for debugging mongo
+mongodb/var/log/
