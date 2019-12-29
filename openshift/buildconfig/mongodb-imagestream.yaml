@@ -13,6 +13,6 @@ spec:
               name: quay.agilesof.com/soceur/mongo:3.6.15-xenial
           generation: null
           importPolicy: {}
-          name: latest
+          name: 3.6.15-xenial
 status:
     dockerImageRepository: ''
