@@ -10,7 +10,7 @@ spec:
         - annotations: null
           from:
               kind: DockerImage
-              name: quay.agilesof.com/soceur/mongo:latest
+              name: quay.agilesof.com/soceur/mongo:3.6.15-xenial
           generation: null
           importPolicy: {}
           name: latest
