@@ -1,5 +1,7 @@
-const validationSchemas = require('./validationSchemas');
-
 module.exports = {
-    validationSchemas: { ...validationSchemas }
+    ...require('./validationSchemas'),
+    ...require('./rules'),
+    ...require('./roleNames'),
+    ...require('./modelNames'),
+    ...require('./serverErrors')
 };

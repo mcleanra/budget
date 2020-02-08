@@ -1,28 +1,30 @@
 # Budget
+
 using Docker containers
 
 ### Run server
+
 ```
-git clone 
+git clone
 cd
 docker-compose up
 ```
 
-### Spins up three containers
-1. api 
+### Above commands spin up five containers
+
+1. api
 2. client
 3. mongo
+4. nginx
+5. cac
 
-### Connect to Mongo container to seed data (optional)
-```
-sudo docker exec -it budget_api_1 sh
-cd seed
-node dataToSeed.js
-```
+### Seed database
 
-#### On Windows use
-```
-winpty docker exec -it budget_api_1 //bin//sh
-```
+[Navigate to route seed data](https://localhost:8000/api/data/seed)
 
-[Open React App being served from localhost:3000](http://localhost:3000/)
+### Navigate to application
+
+[Open React App](https://localhost:8000/login)
+
+-   username: jdoe@gmail.com
+-   password: 12345678

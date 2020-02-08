@@ -1,0 +1,40 @@
+query DirectorateById($id: ObjectId!) {
+    DirectorateById(id: $id) {
+        _id
+        title
+    }
+}
+
+query DirectorateMany {
+    DirectorateMany {
+        _id
+        title
+        updatedAt
+        updatedBy {
+            _id
+            firstName
+            lastName
+        }
+    }
+}
+
+mutation DirectorateCreateOne($title: String!) {
+    DirectorateCreateOne(input: { title: $title }) {
+        _id
+        title
+    }
+}
+
+mutation DirectorateRemoveById($id: ObjectId!) {
+    DirectorateRemoveById(id: $id) {
+        _id
+        title
+    }
+}
+
+mutation DirectorateUpdateById($id: ObjectId!, $title: String!) {
+    DirectorateUpdateById(input: { title: $title }, id: $id) {
+        _id
+        title
+    }
+}

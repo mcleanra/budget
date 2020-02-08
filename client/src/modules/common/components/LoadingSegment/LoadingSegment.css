@@ -1,0 +1,15 @@
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading .headerText {
+    margin: 0;
+    padding: 0;
+}
+
+.heading .actions {
+    display: flex;
+    margin-left: 10px;
+}
