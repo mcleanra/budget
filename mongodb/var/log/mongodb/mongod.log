@@ -205,3 +205,11 @@
 2020-02-03T06:27:14.810+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
 2020-02-03T06:27:14.810+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
 2020-02-03T06:27:14.810+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2020-02-08T13:47:28.287+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2020-02-08T13:47:28.313+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2020-02-08T13:47:28.313+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2020-02-08T13:47:28.315+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2020-02-08T13:47:28.318+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2020-02-08T13:47:28.833+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2020-02-08T13:47:28.833+0000 I CONTROL  [signalProcessingThread] now exiting
+2020-02-08T13:47:28.833+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
