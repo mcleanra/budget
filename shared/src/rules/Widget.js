@@ -2,15 +2,15 @@ const { roleNames } = require('../roleNames');
 
 const grantsObject = {
     [roleNames.VISITOR]: {
-        Widget: {},
+        SpendPlanDraft: {},
     },
     [roleNames.LOGGED_IN_USER]: {
-        Widget: {
+        SpendPlanDraft: {
             'read:any': ['*'],
         },
     },
     [roleNames.ADMIN]: {
-        Widget: {
+        SpendPlanDraft: {
             'create:any': ['*'],
             'read:any': ['*'],
             'update:any': ['*'],
@@ -21,27 +21,32 @@ const grantsObject = {
 
 // TODO: perform permissions based on data https://auth0.com/blog/role-based-access-control-rbac-and-react-apps/
 const apiSecurity = {
-    Widget: {
+    SpendPlanDraft: {
         Query: {
-            WidgetById: ac => (user, data) => {
-                return ac.can(user.role)['readAny']('Widget').granted;
+            SpendPlanDraftById: ac => (user, data) => {
+                return ac.can(user.role)['readAny']('SpendPlanDraft')
+                    .granted;
             },
-            WidgetMany: ac => (user, data) => {
-                return ac.can(user.role)['readAny']('Widget').granted;
+            SpendPlanDraftMany: ac => (user, data) => {
+                return ac.can(user.role)['readAny']('SpendPlanDraft')
+                    .granted;
             },
         },
         Mutation: {
-            WidgetCreateOne: ac => (user, data) => {
-                return ac.can(user.role)['createOwn']('Widget')
-                    .granted;
+            SpendPlanDraftCreateOne: ac => (user, data) => {
+                return ac
+                    .can(user.role)
+                    ['createOwn']('SpendPlanDraft').granted;
             },
-            WidgetRemoveById: ac => (user, data) => {
-                return ac.can(user.role)['deleteOwn']('Widget')
-                    .granted;
+            SpendPlanDraftRemoveById: ac => (user, data) => {
+                return ac
+                    .can(user.role)
+                    ['deleteOwn']('SpendPlanDraft').granted;
             },
-            WidgetUpdateById: ac => (user, data) => {
-                return ac.can(user.role)['updateOwn']('Widget')
-                    .granted;
+            SpendPlanDraftUpdateById: ac => (user, data) => {
+                return ac
+                    .can(user.role)
+                    ['updateOwn']('SpendPlanDraft').granted;
             },
         },
     },

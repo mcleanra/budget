@@ -20,7 +20,10 @@ import {
     ExpenditureType,
     ExpenditureTypeModel,
 } from './entities/expendituretype/model';
-import { WidgetModel, Widget } from './entities/widget/model';
+import {
+    SpendPlanDraftModel,
+    SpendPlanDraft,
+} from './entities/spend-plan-draft/model';
 
 const chance = new Chance();
 
@@ -35,7 +38,7 @@ export async function seedDatabase() {
     );
     const mfpIndicators = await createMfpIndicators(defaultUser);
     const programs = await createPrograms(defaultUser);
-    const widgets = await createWidgets(defaultUser);
+    const spendPlanDrafts = await createSpendPlanDrafts(defaultUser);
 
     return {
         user: defaultUser,
@@ -44,7 +47,7 @@ export async function seedDatabase() {
         expenditureTypes,
         mfpIndicators,
         programs,
-        widgets,
+        spendPlanDrafts,
     };
 }
 
@@ -144,8 +147,8 @@ async function createPrograms(user: User) {
     return (await ProgramModel.create(itemsToCreate)) as Program[];
 }
 
-async function createWidgets(user: User) {
-    return await WidgetModel.create([
+async function createSpendPlanDrafts(user: User) {
+    return await SpendPlanDraftModel.create([
         {
             title: 'SOJ3',
             createdBy: user._id,
@@ -161,5 +164,5 @@ async function createWidgets(user: User) {
             createdBy: user._id,
             updatedBy: user._id,
         },
-    ] as Widget[]);
+    ] as SpendPlanDraft[]);
 }

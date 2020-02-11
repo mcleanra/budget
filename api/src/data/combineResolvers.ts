@@ -4,7 +4,7 @@ import { ExpenditureTypeResolver } from './entities/expendituretype/resolver';
 import { MfpIndicatorResolver } from './entities/mfpindicator/resolver';
 import { ProgramResolver } from './entities/program/resolver';
 import { UserResolver } from './entities/user/resolver';
-import { WidgetResolver } from './entities/widget/resolver';
+import { SpendPlanDraftResolver } from './entities/spend-plan-draft/resolver';
 
 export const combinedResolvers = [
     DirectorateResolver,
@@ -13,5 +13,5 @@ export const combinedResolvers = [
     MfpIndicatorResolver,
     ProgramResolver,
     UserResolver,
-    WidgetResolver,
+    SpendPlanDraftResolver,
 ];

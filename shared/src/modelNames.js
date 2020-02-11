@@ -5,7 +5,7 @@ const modelNames = [
     'MfpIndicator',
     'Program',
     'User',
-    'Widget',
+    'SpendPlanDraft',
 ];
 
 module.exports = {

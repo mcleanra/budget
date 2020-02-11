@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 type CacIdentity {
-  distinguishedName: String!
+    distinguishedName: String!
 }
 
 """
@@ -13,154 +13,177 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 scalar DateTime
 
 type Directorate {
-  _id: ObjectId!
-  title: String!
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+    _id: ObjectId!
+    title: String!
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
 input DirectorateInput {
-  title: String!
+    title: String!
 }
 
 type ExecutionMethod {
-  _id: ObjectId!
-  title: String!
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+    _id: ObjectId!
+    title: String!
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
 input ExecutionMethodInput {
-  title: String!
+    title: String!
 }
 
 type ExpenditureType {
-  _id: ObjectId!
-  title: String!
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+    _id: ObjectId!
+    title: String!
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
 input ExpenditureTypeInput {
-  title: String!
+    title: String!
 }
 
 type GithubIdentity {
-  id: String!
+    id: String!
 }
 
 type LocalIdentity {
-  expires: DateTime!
+    expires: DateTime!
 }
 
 type MfpIndicator {
-  _id: ObjectId!
-  title: String!
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+    _id: ObjectId!
+    title: String!
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
 input MfpIndicatorInput {
-  title: String!
+    title: String!
 }
 
 type Mutation {
-  DirectorateCreateOne(input: DirectorateInput!): Directorate!
-  DirectorateUpdateById(input: DirectorateInput!, id: ObjectId!): Directorate
-  DirectorateRemoveById(id: ObjectId!): Directorate
-  ExecutionMethodCreateOne(input: ExecutionMethodInput!): ExecutionMethod!
-  ExecutionMethodUpdateById(input: ExecutionMethodInput!, id: ObjectId!): ExecutionMethod
-  ExecutionMethodRemoveById(id: ObjectId!): ExecutionMethod
-  ExpenditureTypeCreateOne(input: ExpenditureTypeInput!): ExpenditureType!
-  ExpenditureTypeUpdateById(input: ExpenditureTypeInput!, id: ObjectId!): ExpenditureType
-  ExpenditureTypeRemoveById(id: ObjectId!): ExpenditureType
-  MfpIndicatorCreateOne(input: MfpIndicatorInput!): MfpIndicator!
-  MfpIndicatorUpdateById(input: MfpIndicatorInput!, id: ObjectId!): MfpIndicator
-  MfpIndicatorRemoveById(id: ObjectId!): MfpIndicator
-  ProgramCreateOne(input: ProgramInput!): Program!
-  ProgramUpdateById(input: ProgramInput!, id: ObjectId!): Program
-  ProgramRemoveById(id: ObjectId!): Program
-  UserUpdateMyProfile(input: UserInput!): UpdateMyProfileResult
-  WidgetCreateOne(input: WidgetInput!): Widget!
-  WidgetUpdateById(input: WidgetInput!, id: ObjectId!): Widget
-  WidgetRemoveById(id: ObjectId!): Widget
+    DirectorateCreateOne(input: DirectorateInput!): Directorate!
+    DirectorateUpdateById(
+        input: DirectorateInput!
+        id: ObjectId!
+    ): Directorate
+    DirectorateRemoveById(id: ObjectId!): Directorate
+    ExecutionMethodCreateOne(
+        input: ExecutionMethodInput!
+    ): ExecutionMethod!
+    ExecutionMethodUpdateById(
+        input: ExecutionMethodInput!
+        id: ObjectId!
+    ): ExecutionMethod
+    ExecutionMethodRemoveById(id: ObjectId!): ExecutionMethod
+    ExpenditureTypeCreateOne(
+        input: ExpenditureTypeInput!
+    ): ExpenditureType!
+    ExpenditureTypeUpdateById(
+        input: ExpenditureTypeInput!
+        id: ObjectId!
+    ): ExpenditureType
+    ExpenditureTypeRemoveById(id: ObjectId!): ExpenditureType
+    MfpIndicatorCreateOne(input: MfpIndicatorInput!): MfpIndicator!
+    MfpIndicatorUpdateById(
+        input: MfpIndicatorInput!
+        id: ObjectId!
+    ): MfpIndicator
+    MfpIndicatorRemoveById(id: ObjectId!): MfpIndicator
+    ProgramCreateOne(input: ProgramInput!): Program!
+    ProgramUpdateById(input: ProgramInput!, id: ObjectId!): Program
+    ProgramRemoveById(id: ObjectId!): Program
+    UserUpdateMyProfile(input: UserInput!): UpdateMyProfileResult
+    SpendPlanDraftCreateOne(
+        input: SpendPlanDraftInput!
+    ): SpendPlanDraft!
+    SpendPlanDraftUpdateById(
+        input: SpendPlanDraftInput!
+        id: ObjectId!
+    ): SpendPlanDraft
+    SpendPlanDraftRemoveById(id: ObjectId!): SpendPlanDraft
 }
 
-"""Mongo object id scalar type"""
+"""
+Mongo object id scalar type
+"""
 scalar ObjectId
 
 type Program {
-  _id: ObjectId!
-  title: String!
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+    _id: ObjectId!
+    title: String!
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
 input ProgramInput {
-  title: String!
+    title: String!
 }
 
 type Query {
-  DirectorateById(id: ObjectId!): Directorate
-  DirectorateMany: [Directorate!]!
-  ExecutionMethodById(id: ObjectId!): ExecutionMethod
-  ExecutionMethodMany: [ExecutionMethod!]!
-  ExpenditureTypeById(id: ObjectId!): ExpenditureType
-  ExpenditureTypeMany: [ExpenditureType!]!
-  MfpIndicatorById(id: ObjectId!): MfpIndicator
-  MfpIndicatorMany: [MfpIndicator!]!
-  ProgramById(id: ObjectId!): Program
-  ProgramMany: [Program!]!
-  UserById(id: ObjectId!): User
-  WidgetById(id: ObjectId!): Widget
-  WidgetMany: [Widget!]!
+    DirectorateById(id: ObjectId!): Directorate
+    DirectorateMany: [Directorate!]!
+    ExecutionMethodById(id: ObjectId!): ExecutionMethod
+    ExecutionMethodMany: [ExecutionMethod!]!
+    ExpenditureTypeById(id: ObjectId!): ExpenditureType
+    ExpenditureTypeMany: [ExpenditureType!]!
+    MfpIndicatorById(id: ObjectId!): MfpIndicator
+    MfpIndicatorMany: [MfpIndicator!]!
+    ProgramById(id: ObjectId!): Program
+    ProgramMany: [Program!]!
+    UserById(id: ObjectId!): User
+    SpendPlanDraftById(id: ObjectId!): SpendPlanDraft
+    SpendPlanDraftMany: [SpendPlanDraft!]!
 }
 
 type UpdateMyProfileResult {
-  user: User!
-  token: String!
+    user: User!
+    token: String!
 }
 
 type User {
-  _id: ObjectId!
-  firstName: String!
-  lastName: String!
-  email: String!
-  method: String!
-  cac: CacIdentity
-  github: GithubIdentity
-  local: LocalIdentity
-  lastLoggedIn: DateTime!
-  role: String!
+    _id: ObjectId!
+    firstName: String!
+    lastName: String!
+    email: String!
+    method: String!
+    cac: CacIdentity
+    github: GithubIdentity
+    local: LocalIdentity
+    lastLoggedIn: DateTime!
+    role: String!
 }
 
 input UserInput {
-  firstName: String!
-  lastName: String!
-  email: String!
+    firstName: String!
+    lastName: String!
+    email: String!
 }
 
-type Widget {
-  _id: ObjectId!
-  title: String!
-  date: DateTime
-  createdAt: DateTime!
-  createdBy: User!
-  updatedAt: DateTime!
-  updatedBy: User!
+type SpendPlanDraft {
+    _id: ObjectId!
+    title: String!
+    date: DateTime
+    createdAt: DateTime!
+    createdBy: User!
+    updatedAt: DateTime!
+    updatedBy: User!
 }
 
-input WidgetInput {
-  title: String!
-  date: DateTime!
+input SpendPlanDraftInput {
+    title: String!
+    date: DateTime!
 }

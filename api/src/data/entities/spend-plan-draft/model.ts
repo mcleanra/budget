@@ -6,7 +6,7 @@ import { User } from '../user/model';
 import { Ref } from '../../../types';
 
 @ObjectType()
-export class Widget extends Typegoose {
+export class SpendPlanDraft extends Typegoose {
     @Field()
     readonly _id: ObjectId;
 
@@ -35,12 +35,15 @@ export class Widget extends Typegoose {
     updatedBy: Ref<User>;
 }
 
-export const WidgetModel = new Widget().getModelForClass(Widget, {
-    schemaOptions: { timestamps: true },
-});
+export const SpendPlanDraftModel = new SpendPlanDraft().getModelForClass(
+    SpendPlanDraft,
+    {
+        schemaOptions: { timestamps: true },
+    },
+);
 
 @InputType()
-export class WidgetInput implements Partial<Widget> {
+export class SpendPlanDraftInput implements Partial<SpendPlanDraft> {
     @Field()
     title: string;
 

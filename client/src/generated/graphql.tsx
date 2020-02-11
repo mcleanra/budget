@@ -8,794 +8,821 @@ export type Maybe<T> = T | null;
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string,
-  String: string,
-  Boolean: boolean,
-  Int: number,
-  Float: number,
-  ObjectId: any,
-  DateTime: any,
+    ID: string;
+    String: string;
+    Boolean: boolean;
+    Int: number;
+    Float: number;
+    ObjectId: any;
+    DateTime: any;
 };
 
 export type CacIdentity = {
-   __typename?: 'CacIdentity',
-  distinguishedName: Scalars['String'],
+    __typename?: 'CacIdentity';
+    distinguishedName: Scalars['String'];
 };
 
-
 export type Directorate = {
-   __typename?: 'Directorate',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+    __typename?: 'Directorate';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
 export type DirectorateInput = {
-  title: Scalars['String'],
+    title: Scalars['String'];
 };
 
 export type ExecutionMethod = {
-   __typename?: 'ExecutionMethod',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+    __typename?: 'ExecutionMethod';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
 export type ExecutionMethodInput = {
-  title: Scalars['String'],
+    title: Scalars['String'];
 };
 
 export type ExpenditureType = {
-   __typename?: 'ExpenditureType',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+    __typename?: 'ExpenditureType';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
 export type ExpenditureTypeInput = {
-  title: Scalars['String'],
+    title: Scalars['String'];
 };
 
 export type GithubIdentity = {
-   __typename?: 'GithubIdentity',
-  id: Scalars['String'],
+    __typename?: 'GithubIdentity';
+    id: Scalars['String'];
 };
 
 export type LocalIdentity = {
-   __typename?: 'LocalIdentity',
-  expires: Scalars['DateTime'],
+    __typename?: 'LocalIdentity';
+    expires: Scalars['DateTime'];
 };
 
 export type MfpIndicator = {
-   __typename?: 'MfpIndicator',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+    __typename?: 'MfpIndicator';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
 export type MfpIndicatorInput = {
-  title: Scalars['String'],
+    title: Scalars['String'];
 };
 
 export type Mutation = {
-   __typename?: 'Mutation',
-  DirectorateCreateOne: Directorate,
-  DirectorateUpdateById?: Maybe<Directorate>,
-  DirectorateRemoveById?: Maybe<Directorate>,
-  ExecutionMethodCreateOne: ExecutionMethod,
-  ExecutionMethodUpdateById?: Maybe<ExecutionMethod>,
-  ExecutionMethodRemoveById?: Maybe<ExecutionMethod>,
-  ExpenditureTypeCreateOne: ExpenditureType,
-  ExpenditureTypeUpdateById?: Maybe<ExpenditureType>,
-  ExpenditureTypeRemoveById?: Maybe<ExpenditureType>,
-  MfpIndicatorCreateOne: MfpIndicator,
-  MfpIndicatorUpdateById?: Maybe<MfpIndicator>,
-  MfpIndicatorRemoveById?: Maybe<MfpIndicator>,
-  ProgramCreateOne: Program,
-  ProgramUpdateById?: Maybe<Program>,
-  ProgramRemoveById?: Maybe<Program>,
-  UserUpdateMyProfile?: Maybe<UpdateMyProfileResult>,
-  WidgetCreateOne: Widget,
-  WidgetUpdateById?: Maybe<Widget>,
-  WidgetRemoveById?: Maybe<Widget>,
+    __typename?: 'Mutation';
+    DirectorateCreateOne: Directorate;
+    DirectorateUpdateById?: Maybe<Directorate>;
+    DirectorateRemoveById?: Maybe<Directorate>;
+    ExecutionMethodCreateOne: ExecutionMethod;
+    ExecutionMethodUpdateById?: Maybe<ExecutionMethod>;
+    ExecutionMethodRemoveById?: Maybe<ExecutionMethod>;
+    ExpenditureTypeCreateOne: ExpenditureType;
+    ExpenditureTypeUpdateById?: Maybe<ExpenditureType>;
+    ExpenditureTypeRemoveById?: Maybe<ExpenditureType>;
+    MfpIndicatorCreateOne: MfpIndicator;
+    MfpIndicatorUpdateById?: Maybe<MfpIndicator>;
+    MfpIndicatorRemoveById?: Maybe<MfpIndicator>;
+    ProgramCreateOne: Program;
+    ProgramUpdateById?: Maybe<Program>;
+    ProgramRemoveById?: Maybe<Program>;
+    UserUpdateMyProfile?: Maybe<UpdateMyProfileResult>;
+    SpendPlanDraftCreateOne: SpendPlanDraft;
+    SpendPlanDraftUpdateById?: Maybe<SpendPlanDraft>;
+    SpendPlanDraftRemoveById?: Maybe<SpendPlanDraft>;
 };
-
 
 export type MutationDirectorateCreateOneArgs = {
-  input: DirectorateInput
+    input: DirectorateInput;
 };
-
 
 export type MutationDirectorateUpdateByIdArgs = {
-  input: DirectorateInput,
-  id: Scalars['ObjectId']
+    input: DirectorateInput;
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationDirectorateRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationExecutionMethodCreateOneArgs = {
-  input: ExecutionMethodInput
+    input: ExecutionMethodInput;
 };
-
 
 export type MutationExecutionMethodUpdateByIdArgs = {
-  input: ExecutionMethodInput,
-  id: Scalars['ObjectId']
+    input: ExecutionMethodInput;
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationExecutionMethodRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationExpenditureTypeCreateOneArgs = {
-  input: ExpenditureTypeInput
+    input: ExpenditureTypeInput;
 };
-
 
 export type MutationExpenditureTypeUpdateByIdArgs = {
-  input: ExpenditureTypeInput,
-  id: Scalars['ObjectId']
+    input: ExpenditureTypeInput;
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationExpenditureTypeRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationMfpIndicatorCreateOneArgs = {
-  input: MfpIndicatorInput
+    input: MfpIndicatorInput;
 };
-
 
 export type MutationMfpIndicatorUpdateByIdArgs = {
-  input: MfpIndicatorInput,
-  id: Scalars['ObjectId']
+    input: MfpIndicatorInput;
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationMfpIndicatorRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationProgramCreateOneArgs = {
-  input: ProgramInput
+    input: ProgramInput;
 };
-
 
 export type MutationProgramUpdateByIdArgs = {
-  input: ProgramInput,
-  id: Scalars['ObjectId']
+    input: ProgramInput;
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationProgramRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type MutationUserUpdateMyProfileArgs = {
-  input: UserInput
+    input: UserInput;
 };
 
-
-export type MutationWidgetCreateOneArgs = {
-  input: WidgetInput
+export type MutationSpendPlanDraftCreateOneArgs = {
+    input: SpendPlanDraftInput;
 };
 
-
-export type MutationWidgetUpdateByIdArgs = {
-  input: WidgetInput,
-  id: Scalars['ObjectId']
+export type MutationSpendPlanDraftUpdateByIdArgs = {
+    input: SpendPlanDraftInput;
+    id: Scalars['ObjectId'];
 };
 
-
-export type MutationWidgetRemoveByIdArgs = {
-  id: Scalars['ObjectId']
+export type MutationSpendPlanDraftRemoveByIdArgs = {
+    id: Scalars['ObjectId'];
 };
-
 
 export type Program = {
-   __typename?: 'Program',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+    __typename?: 'Program';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
 export type ProgramInput = {
-  title: Scalars['String'],
+    title: Scalars['String'];
 };
 
 export type Query = {
-   __typename?: 'Query',
-  DirectorateById?: Maybe<Directorate>,
-  DirectorateMany: Array<Directorate>,
-  ExecutionMethodById?: Maybe<ExecutionMethod>,
-  ExecutionMethodMany: Array<ExecutionMethod>,
-  ExpenditureTypeById?: Maybe<ExpenditureType>,
-  ExpenditureTypeMany: Array<ExpenditureType>,
-  MfpIndicatorById?: Maybe<MfpIndicator>,
-  MfpIndicatorMany: Array<MfpIndicator>,
-  ProgramById?: Maybe<Program>,
-  ProgramMany: Array<Program>,
-  UserById?: Maybe<User>,
-  WidgetById?: Maybe<Widget>,
-  WidgetMany: Array<Widget>,
+    __typename?: 'Query';
+    DirectorateById?: Maybe<Directorate>;
+    DirectorateMany: Array<Directorate>;
+    ExecutionMethodById?: Maybe<ExecutionMethod>;
+    ExecutionMethodMany: Array<ExecutionMethod>;
+    ExpenditureTypeById?: Maybe<ExpenditureType>;
+    ExpenditureTypeMany: Array<ExpenditureType>;
+    MfpIndicatorById?: Maybe<MfpIndicator>;
+    MfpIndicatorMany: Array<MfpIndicator>;
+    ProgramById?: Maybe<Program>;
+    ProgramMany: Array<Program>;
+    UserById?: Maybe<User>;
+    SpendPlanDraftById?: Maybe<SpendPlanDraft>;
+    SpendPlanDraftMany: Array<SpendPlanDraft>;
 };
-
 
 export type QueryDirectorateByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type QueryExecutionMethodByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type QueryExpenditureTypeByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type QueryMfpIndicatorByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type QueryProgramByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
-
 
 export type QueryUserByIdArgs = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type QueryWidgetByIdArgs = {
-  id: Scalars['ObjectId']
+export type QuerySpendPlanDraftByIdArgs = {
+    id: Scalars['ObjectId'];
 };
 
 export type UpdateMyProfileResult = {
-   __typename?: 'UpdateMyProfileResult',
-  user: User,
-  token: Scalars['String'],
+    __typename?: 'UpdateMyProfileResult';
+    user: User;
+    token: Scalars['String'];
 };
 
 export type User = {
-   __typename?: 'User',
-  _id: Scalars['ObjectId'],
-  firstName: Scalars['String'],
-  lastName: Scalars['String'],
-  email: Scalars['String'],
-  method: Scalars['String'],
-  cac?: Maybe<CacIdentity>,
-  github?: Maybe<GithubIdentity>,
-  local?: Maybe<LocalIdentity>,
-  lastLoggedIn: Scalars['DateTime'],
-  role: Scalars['String'],
+    __typename?: 'User';
+    _id: Scalars['ObjectId'];
+    firstName: Scalars['String'];
+    lastName: Scalars['String'];
+    email: Scalars['String'];
+    method: Scalars['String'];
+    cac?: Maybe<CacIdentity>;
+    github?: Maybe<GithubIdentity>;
+    local?: Maybe<LocalIdentity>;
+    lastLoggedIn: Scalars['DateTime'];
+    role: Scalars['String'];
 };
 
 export type UserInput = {
-  firstName: Scalars['String'],
-  lastName: Scalars['String'],
-  email: Scalars['String'],
+    firstName: Scalars['String'];
+    lastName: Scalars['String'];
+    email: Scalars['String'];
 };
 
-export type Widget = {
-   __typename?: 'Widget',
-  _id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  date: Scalars['DateTime'],
-  createdAt: Scalars['DateTime'],
-  createdBy: User,
-  updatedAt: Scalars['DateTime'],
-  updatedBy: User,
+export type SpendPlanDraft = {
+    __typename?: 'SpendPlanDraft';
+    _id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    date: Scalars['DateTime'];
+    createdAt: Scalars['DateTime'];
+    createdBy: User;
+    updatedAt: Scalars['DateTime'];
+    updatedBy: User;
 };
 
-export type WidgetInput = {
-  title: Scalars['String'],
-  date: Scalars['DateTime'],
+export type SpendPlanDraftInput = {
+    title: Scalars['String'];
+    date: Scalars['DateTime'];
 };
 
 export type DirectorateByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type DirectorateByIdQuery = (
-  { __typename?: 'Query' }
-  & { DirectorateById: Maybe<(
-    { __typename?: 'Directorate' }
-    & Pick<Directorate, '_id' | 'title'>
-  )> }
-);
+export type DirectorateByIdQuery = { __typename?: 'Query' } & {
+    DirectorateById: Maybe<
+        { __typename?: 'Directorate' } & Pick<
+            Directorate,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type DirectorateManyQueryVariables = {};
 
-
-export type DirectorateManyQuery = (
-  { __typename?: 'Query' }
-  & { DirectorateMany: Array<(
-    { __typename?: 'Directorate' }
-    & Pick<Directorate, '_id' | 'title' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
+export type DirectorateManyQuery = { __typename?: 'Query' } & {
+    DirectorateMany: Array<
+        { __typename?: 'Directorate' } & Pick<
+            Directorate,
+            '_id' | 'title' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
+};
 
 export type DirectorateCreateOneMutationVariables = {
-  title: Scalars['String']
+    title: Scalars['String'];
 };
 
-
-export type DirectorateCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { DirectorateCreateOne: (
-    { __typename?: 'Directorate' }
-    & Pick<Directorate, '_id' | 'title'>
-  ) }
-);
+export type DirectorateCreateOneMutation = {
+    __typename?: 'Mutation';
+} & {
+    DirectorateCreateOne: { __typename?: 'Directorate' } & Pick<
+        Directorate,
+        '_id' | 'title'
+    >;
+};
 
 export type DirectorateRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type DirectorateRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { DirectorateRemoveById: Maybe<(
-    { __typename?: 'Directorate' }
-    & Pick<Directorate, '_id' | 'title'>
-  )> }
-);
+export type DirectorateRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    DirectorateRemoveById: Maybe<
+        { __typename?: 'Directorate' } & Pick<
+            Directorate,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type DirectorateUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String']
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
 };
 
-
-export type DirectorateUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { DirectorateUpdateById: Maybe<(
-    { __typename?: 'Directorate' }
-    & Pick<Directorate, '_id' | 'title'>
-  )> }
-);
+export type DirectorateUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    DirectorateUpdateById: Maybe<
+        { __typename?: 'Directorate' } & Pick<
+            Directorate,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExecutionMethodByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ExecutionMethodByIdQuery = (
-  { __typename?: 'Query' }
-  & { ExecutionMethodById: Maybe<(
-    { __typename?: 'ExecutionMethod' }
-    & Pick<ExecutionMethod, '_id' | 'title'>
-  )> }
-);
+export type ExecutionMethodByIdQuery = { __typename?: 'Query' } & {
+    ExecutionMethodById: Maybe<
+        { __typename?: 'ExecutionMethod' } & Pick<
+            ExecutionMethod,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExecutionMethodManyQueryVariables = {};
 
-
-export type ExecutionMethodManyQuery = (
-  { __typename?: 'Query' }
-  & { ExecutionMethodMany: Array<(
-    { __typename?: 'ExecutionMethod' }
-    & Pick<ExecutionMethod, '_id' | 'title' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
+export type ExecutionMethodManyQuery = { __typename?: 'Query' } & {
+    ExecutionMethodMany: Array<
+        { __typename?: 'ExecutionMethod' } & Pick<
+            ExecutionMethod,
+            '_id' | 'title' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
+};
 
 export type ExecutionMethodCreateOneMutationVariables = {
-  title: Scalars['String']
+    title: Scalars['String'];
 };
 
-
-export type ExecutionMethodCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { ExecutionMethodCreateOne: (
-    { __typename?: 'ExecutionMethod' }
-    & Pick<ExecutionMethod, '_id' | 'title'>
-  ) }
-);
+export type ExecutionMethodCreateOneMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExecutionMethodCreateOne: {
+        __typename?: 'ExecutionMethod';
+    } & Pick<ExecutionMethod, '_id' | 'title'>;
+};
 
 export type ExecutionMethodRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ExecutionMethodRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ExecutionMethodRemoveById: Maybe<(
-    { __typename?: 'ExecutionMethod' }
-    & Pick<ExecutionMethod, '_id' | 'title'>
-  )> }
-);
+export type ExecutionMethodRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExecutionMethodRemoveById: Maybe<
+        { __typename?: 'ExecutionMethod' } & Pick<
+            ExecutionMethod,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExecutionMethodUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String']
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
 };
 
-
-export type ExecutionMethodUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ExecutionMethodUpdateById: Maybe<(
-    { __typename?: 'ExecutionMethod' }
-    & Pick<ExecutionMethod, '_id' | 'title'>
-  )> }
-);
+export type ExecutionMethodUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExecutionMethodUpdateById: Maybe<
+        { __typename?: 'ExecutionMethod' } & Pick<
+            ExecutionMethod,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExpenditureTypeByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ExpenditureTypeByIdQuery = (
-  { __typename?: 'Query' }
-  & { ExpenditureTypeById: Maybe<(
-    { __typename?: 'ExpenditureType' }
-    & Pick<ExpenditureType, '_id' | 'title'>
-  )> }
-);
+export type ExpenditureTypeByIdQuery = { __typename?: 'Query' } & {
+    ExpenditureTypeById: Maybe<
+        { __typename?: 'ExpenditureType' } & Pick<
+            ExpenditureType,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExpenditureTypeManyQueryVariables = {};
 
-
-export type ExpenditureTypeManyQuery = (
-  { __typename?: 'Query' }
-  & { ExpenditureTypeMany: Array<(
-    { __typename?: 'ExpenditureType' }
-    & Pick<ExpenditureType, '_id' | 'title' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
+export type ExpenditureTypeManyQuery = { __typename?: 'Query' } & {
+    ExpenditureTypeMany: Array<
+        { __typename?: 'ExpenditureType' } & Pick<
+            ExpenditureType,
+            '_id' | 'title' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
+};
 
 export type ExpenditureTypeCreateOneMutationVariables = {
-  title: Scalars['String']
+    title: Scalars['String'];
 };
 
-
-export type ExpenditureTypeCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { ExpenditureTypeCreateOne: (
-    { __typename?: 'ExpenditureType' }
-    & Pick<ExpenditureType, '_id' | 'title'>
-  ) }
-);
+export type ExpenditureTypeCreateOneMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExpenditureTypeCreateOne: {
+        __typename?: 'ExpenditureType';
+    } & Pick<ExpenditureType, '_id' | 'title'>;
+};
 
 export type ExpenditureTypeRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ExpenditureTypeRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ExpenditureTypeRemoveById: Maybe<(
-    { __typename?: 'ExpenditureType' }
-    & Pick<ExpenditureType, '_id' | 'title'>
-  )> }
-);
+export type ExpenditureTypeRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExpenditureTypeRemoveById: Maybe<
+        { __typename?: 'ExpenditureType' } & Pick<
+            ExpenditureType,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ExpenditureTypeUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String']
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
 };
 
-
-export type ExpenditureTypeUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ExpenditureTypeUpdateById: Maybe<(
-    { __typename?: 'ExpenditureType' }
-    & Pick<ExpenditureType, '_id' | 'title'>
-  )> }
-);
+export type ExpenditureTypeUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ExpenditureTypeUpdateById: Maybe<
+        { __typename?: 'ExpenditureType' } & Pick<
+            ExpenditureType,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type MfpIndicatorByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type MfpIndicatorByIdQuery = (
-  { __typename?: 'Query' }
-  & { MfpIndicatorById: Maybe<(
-    { __typename?: 'MfpIndicator' }
-    & Pick<MfpIndicator, '_id' | 'title'>
-  )> }
-);
+export type MfpIndicatorByIdQuery = { __typename?: 'Query' } & {
+    MfpIndicatorById: Maybe<
+        { __typename?: 'MfpIndicator' } & Pick<
+            MfpIndicator,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type MfpIndicatorManyQueryVariables = {};
 
-
-export type MfpIndicatorManyQuery = (
-  { __typename?: 'Query' }
-  & { MfpIndicatorMany: Array<(
-    { __typename?: 'MfpIndicator' }
-    & Pick<MfpIndicator, '_id' | 'title' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
+export type MfpIndicatorManyQuery = { __typename?: 'Query' } & {
+    MfpIndicatorMany: Array<
+        { __typename?: 'MfpIndicator' } & Pick<
+            MfpIndicator,
+            '_id' | 'title' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
+};
 
 export type MfpIndicatorCreateOneMutationVariables = {
-  title: Scalars['String']
+    title: Scalars['String'];
 };
 
-
-export type MfpIndicatorCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { MfpIndicatorCreateOne: (
-    { __typename?: 'MfpIndicator' }
-    & Pick<MfpIndicator, '_id' | 'title'>
-  ) }
-);
+export type MfpIndicatorCreateOneMutation = {
+    __typename?: 'Mutation';
+} & {
+    MfpIndicatorCreateOne: { __typename?: 'MfpIndicator' } & Pick<
+        MfpIndicator,
+        '_id' | 'title'
+    >;
+};
 
 export type MfpIndicatorRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type MfpIndicatorRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { MfpIndicatorRemoveById: Maybe<(
-    { __typename?: 'MfpIndicator' }
-    & Pick<MfpIndicator, '_id' | 'title'>
-  )> }
-);
+export type MfpIndicatorRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    MfpIndicatorRemoveById: Maybe<
+        { __typename?: 'MfpIndicator' } & Pick<
+            MfpIndicator,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type MfpIndicatorUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String']
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
 };
 
-
-export type MfpIndicatorUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { MfpIndicatorUpdateById: Maybe<(
-    { __typename?: 'MfpIndicator' }
-    & Pick<MfpIndicator, '_id' | 'title'>
-  )> }
-);
+export type MfpIndicatorUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    MfpIndicatorUpdateById: Maybe<
+        { __typename?: 'MfpIndicator' } & Pick<
+            MfpIndicator,
+            '_id' | 'title'
+        >
+    >;
+};
 
 export type ProgramByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ProgramByIdQuery = (
-  { __typename?: 'Query' }
-  & { ProgramById: Maybe<(
-    { __typename?: 'Program' }
-    & Pick<Program, '_id' | 'title'>
-  )> }
-);
+export type ProgramByIdQuery = { __typename?: 'Query' } & {
+    ProgramById: Maybe<
+        { __typename?: 'Program' } & Pick<Program, '_id' | 'title'>
+    >;
+};
 
 export type ProgramManyQueryVariables = {};
 
-
-export type ProgramManyQuery = (
-  { __typename?: 'Query' }
-  & { ProgramMany: Array<(
-    { __typename?: 'Program' }
-    & Pick<Program, '_id' | 'title' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
+export type ProgramManyQuery = { __typename?: 'Query' } & {
+    ProgramMany: Array<
+        { __typename?: 'Program' } & Pick<
+            Program,
+            '_id' | 'title' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
+};
 
 export type ProgramCreateOneMutationVariables = {
-  title: Scalars['String']
+    title: Scalars['String'];
 };
 
-
-export type ProgramCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { ProgramCreateOne: (
-    { __typename?: 'Program' }
-    & Pick<Program, '_id' | 'title'>
-  ) }
-);
+export type ProgramCreateOneMutation = { __typename?: 'Mutation' } & {
+    ProgramCreateOne: { __typename?: 'Program' } & Pick<
+        Program,
+        '_id' | 'title'
+    >;
+};
 
 export type ProgramRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type ProgramRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ProgramRemoveById: Maybe<(
-    { __typename?: 'Program' }
-    & Pick<Program, '_id' | 'title'>
-  )> }
-);
+export type ProgramRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ProgramRemoveById: Maybe<
+        { __typename?: 'Program' } & Pick<Program, '_id' | 'title'>
+    >;
+};
 
 export type ProgramUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String']
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
 };
 
-
-export type ProgramUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { ProgramUpdateById: Maybe<(
-    { __typename?: 'Program' }
-    & Pick<Program, '_id' | 'title'>
-  )> }
-);
+export type ProgramUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    ProgramUpdateById: Maybe<
+        { __typename?: 'Program' } & Pick<Program, '_id' | 'title'>
+    >;
+};
 
 export type UserByIdQueryVariables = {
-  id: Scalars['ObjectId']
+    id: Scalars['ObjectId'];
 };
 
-
-export type UserByIdQuery = (
-  { __typename?: 'Query' }
-  & { UserById: Maybe<(
-    { __typename?: 'User' }
-    & Pick<User, '_id' | 'firstName' | 'lastName' | 'email'>
-  )> }
-);
+export type UserByIdQuery = { __typename?: 'Query' } & {
+    UserById: Maybe<
+        { __typename?: 'User' } & Pick<
+            User,
+            '_id' | 'firstName' | 'lastName' | 'email'
+        >
+    >;
+};
 
 export type UserUpdateMyProfileMutationVariables = {
-  firstName: Scalars['String'],
-  lastName: Scalars['String'],
-  email: Scalars['String']
+    firstName: Scalars['String'];
+    lastName: Scalars['String'];
+    email: Scalars['String'];
 };
 
-
-export type UserUpdateMyProfileMutation = (
-  { __typename?: 'Mutation' }
-  & { UserUpdateMyProfile: Maybe<(
-    { __typename?: 'UpdateMyProfileResult' }
-    & Pick<UpdateMyProfileResult, 'token'>
-    & { user: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName' | 'email' | 'lastLoggedIn'>
-    ) }
-  )> }
-);
-
-export type WidgetByIdQueryVariables = {
-  id: Scalars['ObjectId']
+export type UserUpdateMyProfileMutation = {
+    __typename?: 'Mutation';
+} & {
+    UserUpdateMyProfile: Maybe<
+        { __typename?: 'UpdateMyProfileResult' } & Pick<
+            UpdateMyProfileResult,
+            'token'
+        > & {
+                user: { __typename?: 'User' } & Pick<
+                    User,
+                    | '_id'
+                    | 'firstName'
+                    | 'lastName'
+                    | 'email'
+                    | 'lastLoggedIn'
+                >;
+            }
+    >;
 };
 
-
-export type WidgetByIdQuery = (
-  { __typename?: 'Query' }
-  & { WidgetById: Maybe<(
-    { __typename?: 'Widget' }
-    & Pick<Widget, '_id' | 'title' | 'date'>
-  )> }
-);
-
-export type WidgetManyQueryVariables = {};
-
-
-export type WidgetManyQuery = (
-  { __typename?: 'Query' }
-  & { WidgetMany: Array<(
-    { __typename?: 'Widget' }
-    & Pick<Widget, '_id' | 'title' | 'date' | 'updatedAt'>
-    & { updatedBy: (
-      { __typename?: 'User' }
-      & Pick<User, '_id' | 'firstName' | 'lastName'>
-    ) }
-  )> }
-);
-
-export type WidgetCreateOneMutationVariables = {
-  title: Scalars['String'],
-  date: Scalars['DateTime']
+export type SpendPlanDraftByIdQueryVariables = {
+    id: Scalars['ObjectId'];
 };
 
-
-export type WidgetCreateOneMutation = (
-  { __typename?: 'Mutation' }
-  & { WidgetCreateOne: (
-    { __typename?: 'Widget' }
-    & Pick<Widget, '_id' | 'title' | 'date'>
-  ) }
-);
-
-export type WidgetRemoveByIdMutationVariables = {
-  id: Scalars['ObjectId']
+export type SpendPlanDraftByIdQuery = { __typename?: 'Query' } & {
+    SpendPlanDraftById: Maybe<
+        { __typename?: 'SpendPlanDraft' } & Pick<
+            SpendPlanDraft,
+            '_id' | 'title' | 'date'
+        >
+    >;
 };
 
+export type SpendPlanDraftManyQueryVariables = {};
 
-export type WidgetRemoveByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { WidgetRemoveById: Maybe<(
-    { __typename?: 'Widget' }
-    & Pick<Widget, '_id' | 'title' | 'date'>
-  )> }
-);
-
-export type WidgetUpdateByIdMutationVariables = {
-  id: Scalars['ObjectId'],
-  title: Scalars['String'],
-  date: Scalars['DateTime']
+export type SpendPlanDraftManyQuery = { __typename?: 'Query' } & {
+    SpendPlanDraftMany: Array<
+        { __typename?: 'SpendPlanDraft' } & Pick<
+            SpendPlanDraft,
+            '_id' | 'title' | 'date' | 'updatedAt'
+        > & {
+                updatedBy: { __typename?: 'User' } & Pick<
+                    User,
+                    '_id' | 'firstName' | 'lastName'
+                >;
+            }
+    >;
 };
 
+export type SpendPlanDraftCreateOneMutationVariables = {
+    title: Scalars['String'];
+    date: Scalars['DateTime'];
+};
 
-export type WidgetUpdateByIdMutation = (
-  { __typename?: 'Mutation' }
-  & { WidgetUpdateById: Maybe<(
-    { __typename?: 'Widget' }
-    & Pick<Widget, '_id' | 'title' | 'date'>
-  )> }
-);
+export type SpendPlanDraftCreateOneMutation = {
+    __typename?: 'Mutation';
+} & {
+    SpendPlanDraftCreateOne: { __typename?: 'SpendPlanDraft' } & Pick<
+        SpendPlanDraft,
+        '_id' | 'title' | 'date'
+    >;
+};
 
+export type SpendPlanDraftRemoveByIdMutationVariables = {
+    id: Scalars['ObjectId'];
+};
+
+export type SpendPlanDraftRemoveByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    SpendPlanDraftRemoveById: Maybe<
+        { __typename?: 'SpendPlanDraft' } & Pick<
+            SpendPlanDraft,
+            '_id' | 'title' | 'date'
+        >
+    >;
+};
+
+export type SpendPlanDraftUpdateByIdMutationVariables = {
+    id: Scalars['ObjectId'];
+    title: Scalars['String'];
+    date: Scalars['DateTime'];
+};
+
+export type SpendPlanDraftUpdateByIdMutation = {
+    __typename?: 'Mutation';
+} & {
+    SpendPlanDraftUpdateById: Maybe<
+        { __typename?: 'SpendPlanDraft' } & Pick<
+            SpendPlanDraft,
+            '_id' | 'title' | 'date'
+        >
+    >;
+};
 
 export const DirectorateByIdDocument = gql`
     query DirectorateById($id: ObjectId!) {
-  DirectorateById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type DirectorateByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<DirectorateByIdQuery, DirectorateByIdQueryVariables>, 'query'> & ({ variables: DirectorateByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const DirectorateByIdComponent = (props: DirectorateByIdComponentProps) => (
-      <ApolloReactComponents.Query<DirectorateByIdQuery, DirectorateByIdQueryVariables> query={DirectorateByIdDocument} {...props} />
+        DirectorateById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type DirectorateByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | { variables: DirectorateByIdQueryVariables; skip?: boolean }
+        | { skip: boolean }
     );
-    
-export type DirectorateByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<DirectorateByIdQuery, DirectorateByIdQueryVariables> & TChildProps;
-export function withDirectorateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  DirectorateByIdQuery,
-  DirectorateByIdQueryVariables,
-  DirectorateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, DirectorateByIdQuery, DirectorateByIdQueryVariables, DirectorateByIdProps<TChildProps>>(DirectorateByIdDocument, {
-      alias: 'directorateById',
-      ...operationOptions
+
+export const DirectorateByIdComponent = (
+    props: DirectorateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >
+        query={DirectorateByIdDocument}
+        {...props}
+    />
+);
+
+export type DirectorateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    DirectorateByIdQuery,
+    DirectorateByIdQueryVariables
+> &
+    TChildProps;
+export function withDirectorateById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables,
+        DirectorateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables,
+        DirectorateByIdProps<TChildProps>
+    >(DirectorateByIdDocument, {
+        alias: 'directorateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useDirectorateByIdQuery__
  *
  * To run a query within a React component, call `useDirectorateByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useDirectorateByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useDirectorateByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -807,52 +834,103 @@ export function withDirectorateById<TProps, TChildProps = {}>(operationOptions?:
  *   },
  * });
  */
-export function useDirectorateByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<DirectorateByIdQuery, DirectorateByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<DirectorateByIdQuery, DirectorateByIdQueryVariables>(DirectorateByIdDocument, baseOptions);
-      }
-export function useDirectorateByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<DirectorateByIdQuery, DirectorateByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<DirectorateByIdQuery, DirectorateByIdQueryVariables>(DirectorateByIdDocument, baseOptions);
-        }
-export type DirectorateByIdQueryHookResult = ReturnType<typeof useDirectorateByIdQuery>;
-export type DirectorateByIdLazyQueryHookResult = ReturnType<typeof useDirectorateByIdLazyQuery>;
-export type DirectorateByIdQueryResult = ApolloReactCommon.QueryResult<DirectorateByIdQuery, DirectorateByIdQueryVariables>;
+export function useDirectorateByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >(DirectorateByIdDocument, baseOptions);
+}
+export function useDirectorateByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        DirectorateByIdQuery,
+        DirectorateByIdQueryVariables
+    >(DirectorateByIdDocument, baseOptions);
+}
+export type DirectorateByIdQueryHookResult = ReturnType<
+    typeof useDirectorateByIdQuery
+>;
+export type DirectorateByIdLazyQueryHookResult = ReturnType<
+    typeof useDirectorateByIdLazyQuery
+>;
+export type DirectorateByIdQueryResult = ApolloReactCommon.QueryResult<
+    DirectorateByIdQuery,
+    DirectorateByIdQueryVariables
+>;
 export const DirectorateManyDocument = gql`
     query DirectorateMany {
-  DirectorateMany {
-    _id
-    title
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
+        DirectorateMany {
+            _id
+            title
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
+        }
     }
-  }
-}
-    `;
-export type DirectorateManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<DirectorateManyQuery, DirectorateManyQueryVariables>, 'query'>;
+`;
+export type DirectorateManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const DirectorateManyComponent = (props: DirectorateManyComponentProps) => (
-      <ApolloReactComponents.Query<DirectorateManyQuery, DirectorateManyQueryVariables> query={DirectorateManyDocument} {...props} />
-    );
-    
-export type DirectorateManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<DirectorateManyQuery, DirectorateManyQueryVariables> & TChildProps;
-export function withDirectorateMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  DirectorateManyQuery,
-  DirectorateManyQueryVariables,
-  DirectorateManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, DirectorateManyQuery, DirectorateManyQueryVariables, DirectorateManyProps<TChildProps>>(DirectorateManyDocument, {
-      alias: 'directorateMany',
-      ...operationOptions
+export const DirectorateManyComponent = (
+    props: DirectorateManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >
+        query={DirectorateManyDocument}
+        {...props}
+    />
+);
+
+export type DirectorateManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    DirectorateManyQuery,
+    DirectorateManyQueryVariables
+> &
+    TChildProps;
+export function withDirectorateMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables,
+        DirectorateManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables,
+        DirectorateManyProps<TChildProps>
+    >(DirectorateManyDocument, {
+        alias: 'directorateMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useDirectorateManyQuery__
  *
  * To run a query within a React component, call `useDirectorateManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useDirectorateManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useDirectorateManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -863,41 +941,95 @@ export function withDirectorateMany<TProps, TChildProps = {}>(operationOptions?:
  *   },
  * });
  */
-export function useDirectorateManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<DirectorateManyQuery, DirectorateManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<DirectorateManyQuery, DirectorateManyQueryVariables>(DirectorateManyDocument, baseOptions);
-      }
-export function useDirectorateManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<DirectorateManyQuery, DirectorateManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<DirectorateManyQuery, DirectorateManyQueryVariables>(DirectorateManyDocument, baseOptions);
-        }
-export type DirectorateManyQueryHookResult = ReturnType<typeof useDirectorateManyQuery>;
-export type DirectorateManyLazyQueryHookResult = ReturnType<typeof useDirectorateManyLazyQuery>;
-export type DirectorateManyQueryResult = ApolloReactCommon.QueryResult<DirectorateManyQuery, DirectorateManyQueryVariables>;
+export function useDirectorateManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >(DirectorateManyDocument, baseOptions);
+}
+export function useDirectorateManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        DirectorateManyQuery,
+        DirectorateManyQueryVariables
+    >(DirectorateManyDocument, baseOptions);
+}
+export type DirectorateManyQueryHookResult = ReturnType<
+    typeof useDirectorateManyQuery
+>;
+export type DirectorateManyLazyQueryHookResult = ReturnType<
+    typeof useDirectorateManyLazyQuery
+>;
+export type DirectorateManyQueryResult = ApolloReactCommon.QueryResult<
+    DirectorateManyQuery,
+    DirectorateManyQueryVariables
+>;
 export const DirectorateCreateOneDocument = gql`
     mutation DirectorateCreateOne($title: String!) {
-  DirectorateCreateOne(input: {title: $title}) {
-    _id
-    title
-  }
-}
-    `;
-export type DirectorateCreateOneMutationFn = ApolloReactCommon.MutationFunction<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables>;
-export type DirectorateCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables>, 'mutation'>;
+        DirectorateCreateOne(input: { title: $title }) {
+            _id
+            title
+        }
+    }
+`;
+export type DirectorateCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    DirectorateCreateOneMutation,
+    DirectorateCreateOneMutationVariables
+>;
+export type DirectorateCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const DirectorateCreateOneComponent = (props: DirectorateCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables> mutation={DirectorateCreateOneDocument} {...props} />
-    );
-    
-export type DirectorateCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables> & TChildProps;
-export function withDirectorateCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  DirectorateCreateOneMutation,
-  DirectorateCreateOneMutationVariables,
-  DirectorateCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables, DirectorateCreateOneProps<TChildProps>>(DirectorateCreateOneDocument, {
-      alias: 'directorateCreateOne',
-      ...operationOptions
+export const DirectorateCreateOneComponent = (
+    props: DirectorateCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables
+    >
+        mutation={DirectorateCreateOneDocument}
+        {...props}
+    />
+);
+
+export type DirectorateCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    DirectorateCreateOneMutation,
+    DirectorateCreateOneMutationVariables
+> &
+    TChildProps;
+export function withDirectorateCreateOne<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables,
+        DirectorateCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables,
+        DirectorateCreateOneProps<TChildProps>
+    >(DirectorateCreateOneDocument, {
+        alias: 'directorateCreateOne',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useDirectorateCreateOneMutation__
@@ -916,38 +1048,84 @@ export function withDirectorateCreateOne<TProps, TChildProps = {}>(operationOpti
  *   },
  * });
  */
-export function useDirectorateCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables>(DirectorateCreateOneDocument, baseOptions);
-      }
-export type DirectorateCreateOneMutationHookResult = ReturnType<typeof useDirectorateCreateOneMutation>;
-export type DirectorateCreateOneMutationResult = ApolloReactCommon.MutationResult<DirectorateCreateOneMutation>;
-export type DirectorateCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<DirectorateCreateOneMutation, DirectorateCreateOneMutationVariables>;
+export function useDirectorateCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        DirectorateCreateOneMutation,
+        DirectorateCreateOneMutationVariables
+    >(DirectorateCreateOneDocument, baseOptions);
+}
+export type DirectorateCreateOneMutationHookResult = ReturnType<
+    typeof useDirectorateCreateOneMutation
+>;
+export type DirectorateCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    DirectorateCreateOneMutation
+>;
+export type DirectorateCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    DirectorateCreateOneMutation,
+    DirectorateCreateOneMutationVariables
+>;
 export const DirectorateRemoveByIdDocument = gql`
     mutation DirectorateRemoveById($id: ObjectId!) {
-  DirectorateRemoveById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type DirectorateRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables>;
-export type DirectorateRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables>, 'mutation'>;
+        DirectorateRemoveById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type DirectorateRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    DirectorateRemoveByIdMutation,
+    DirectorateRemoveByIdMutationVariables
+>;
+export type DirectorateRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const DirectorateRemoveByIdComponent = (props: DirectorateRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables> mutation={DirectorateRemoveByIdDocument} {...props} />
-    );
-    
-export type DirectorateRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables> & TChildProps;
-export function withDirectorateRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  DirectorateRemoveByIdMutation,
-  DirectorateRemoveByIdMutationVariables,
-  DirectorateRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables, DirectorateRemoveByIdProps<TChildProps>>(DirectorateRemoveByIdDocument, {
-      alias: 'directorateRemoveById',
-      ...operationOptions
+export const DirectorateRemoveByIdComponent = (
+    props: DirectorateRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables
+    >
+        mutation={DirectorateRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type DirectorateRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    DirectorateRemoveByIdMutation,
+    DirectorateRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withDirectorateRemoveById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables,
+        DirectorateRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables,
+        DirectorateRemoveByIdProps<TChildProps>
+    >(DirectorateRemoveByIdDocument, {
+        alias: 'directorateRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useDirectorateRemoveByIdMutation__
@@ -966,38 +1144,84 @@ export function withDirectorateRemoveById<TProps, TChildProps = {}>(operationOpt
  *   },
  * });
  */
-export function useDirectorateRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables>(DirectorateRemoveByIdDocument, baseOptions);
-      }
-export type DirectorateRemoveByIdMutationHookResult = ReturnType<typeof useDirectorateRemoveByIdMutation>;
-export type DirectorateRemoveByIdMutationResult = ApolloReactCommon.MutationResult<DirectorateRemoveByIdMutation>;
-export type DirectorateRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<DirectorateRemoveByIdMutation, DirectorateRemoveByIdMutationVariables>;
+export function useDirectorateRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        DirectorateRemoveByIdMutation,
+        DirectorateRemoveByIdMutationVariables
+    >(DirectorateRemoveByIdDocument, baseOptions);
+}
+export type DirectorateRemoveByIdMutationHookResult = ReturnType<
+    typeof useDirectorateRemoveByIdMutation
+>;
+export type DirectorateRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    DirectorateRemoveByIdMutation
+>;
+export type DirectorateRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    DirectorateRemoveByIdMutation,
+    DirectorateRemoveByIdMutationVariables
+>;
 export const DirectorateUpdateByIdDocument = gql`
     mutation DirectorateUpdateById($id: ObjectId!, $title: String!) {
-  DirectorateUpdateById(input: {title: $title}, id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type DirectorateUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables>;
-export type DirectorateUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables>, 'mutation'>;
+        DirectorateUpdateById(input: { title: $title }, id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type DirectorateUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    DirectorateUpdateByIdMutation,
+    DirectorateUpdateByIdMutationVariables
+>;
+export type DirectorateUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const DirectorateUpdateByIdComponent = (props: DirectorateUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables> mutation={DirectorateUpdateByIdDocument} {...props} />
-    );
-    
-export type DirectorateUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables> & TChildProps;
-export function withDirectorateUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  DirectorateUpdateByIdMutation,
-  DirectorateUpdateByIdMutationVariables,
-  DirectorateUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables, DirectorateUpdateByIdProps<TChildProps>>(DirectorateUpdateByIdDocument, {
-      alias: 'directorateUpdateById',
-      ...operationOptions
+export const DirectorateUpdateByIdComponent = (
+    props: DirectorateUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables
+    >
+        mutation={DirectorateUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type DirectorateUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    DirectorateUpdateByIdMutation,
+    DirectorateUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withDirectorateUpdateById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables,
+        DirectorateUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables,
+        DirectorateUpdateByIdProps<TChildProps>
+    >(DirectorateUpdateByIdDocument, {
+        alias: 'directorateUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useDirectorateUpdateByIdMutation__
@@ -1017,43 +1241,93 @@ export function withDirectorateUpdateById<TProps, TChildProps = {}>(operationOpt
  *   },
  * });
  */
-export function useDirectorateUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables>(DirectorateUpdateByIdDocument, baseOptions);
-      }
-export type DirectorateUpdateByIdMutationHookResult = ReturnType<typeof useDirectorateUpdateByIdMutation>;
-export type DirectorateUpdateByIdMutationResult = ApolloReactCommon.MutationResult<DirectorateUpdateByIdMutation>;
-export type DirectorateUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<DirectorateUpdateByIdMutation, DirectorateUpdateByIdMutationVariables>;
+export function useDirectorateUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        DirectorateUpdateByIdMutation,
+        DirectorateUpdateByIdMutationVariables
+    >(DirectorateUpdateByIdDocument, baseOptions);
+}
+export type DirectorateUpdateByIdMutationHookResult = ReturnType<
+    typeof useDirectorateUpdateByIdMutation
+>;
+export type DirectorateUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    DirectorateUpdateByIdMutation
+>;
+export type DirectorateUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    DirectorateUpdateByIdMutation,
+    DirectorateUpdateByIdMutationVariables
+>;
 export const ExecutionMethodByIdDocument = gql`
     query ExecutionMethodById($id: ObjectId!) {
-  ExecutionMethodById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ExecutionMethodByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>, 'query'> & ({ variables: ExecutionMethodByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const ExecutionMethodByIdComponent = (props: ExecutionMethodByIdComponentProps) => (
-      <ApolloReactComponents.Query<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables> query={ExecutionMethodByIdDocument} {...props} />
+        ExecutionMethodById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExecutionMethodByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | {
+              variables: ExecutionMethodByIdQueryVariables;
+              skip?: boolean;
+          }
+        | { skip: boolean }
     );
-    
-export type ExecutionMethodByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables> & TChildProps;
-export function withExecutionMethodById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExecutionMethodByIdQuery,
-  ExecutionMethodByIdQueryVariables,
-  ExecutionMethodByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables, ExecutionMethodByIdProps<TChildProps>>(ExecutionMethodByIdDocument, {
-      alias: 'executionMethodById',
-      ...operationOptions
+
+export const ExecutionMethodByIdComponent = (
+    props: ExecutionMethodByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >
+        query={ExecutionMethodByIdDocument}
+        {...props}
+    />
+);
+
+export type ExecutionMethodByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ExecutionMethodByIdQuery,
+    ExecutionMethodByIdQueryVariables
+> &
+    TChildProps;
+export function withExecutionMethodById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables,
+        ExecutionMethodByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables,
+        ExecutionMethodByIdProps<TChildProps>
+    >(ExecutionMethodByIdDocument, {
+        alias: 'executionMethodById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExecutionMethodByIdQuery__
  *
  * To run a query within a React component, call `useExecutionMethodByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useExecutionMethodByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useExecutionMethodByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1065,52 +1339,103 @@ export function withExecutionMethodById<TProps, TChildProps = {}>(operationOptio
  *   },
  * });
  */
-export function useExecutionMethodByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>(ExecutionMethodByIdDocument, baseOptions);
-      }
-export function useExecutionMethodByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>(ExecutionMethodByIdDocument, baseOptions);
-        }
-export type ExecutionMethodByIdQueryHookResult = ReturnType<typeof useExecutionMethodByIdQuery>;
-export type ExecutionMethodByIdLazyQueryHookResult = ReturnType<typeof useExecutionMethodByIdLazyQuery>;
-export type ExecutionMethodByIdQueryResult = ApolloReactCommon.QueryResult<ExecutionMethodByIdQuery, ExecutionMethodByIdQueryVariables>;
+export function useExecutionMethodByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >(ExecutionMethodByIdDocument, baseOptions);
+}
+export function useExecutionMethodByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ExecutionMethodByIdQuery,
+        ExecutionMethodByIdQueryVariables
+    >(ExecutionMethodByIdDocument, baseOptions);
+}
+export type ExecutionMethodByIdQueryHookResult = ReturnType<
+    typeof useExecutionMethodByIdQuery
+>;
+export type ExecutionMethodByIdLazyQueryHookResult = ReturnType<
+    typeof useExecutionMethodByIdLazyQuery
+>;
+export type ExecutionMethodByIdQueryResult = ApolloReactCommon.QueryResult<
+    ExecutionMethodByIdQuery,
+    ExecutionMethodByIdQueryVariables
+>;
 export const ExecutionMethodManyDocument = gql`
     query ExecutionMethodMany {
-  ExecutionMethodMany {
-    _id
-    title
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
+        ExecutionMethodMany {
+            _id
+            title
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
+        }
     }
-  }
-}
-    `;
-export type ExecutionMethodManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>, 'query'>;
+`;
+export type ExecutionMethodManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const ExecutionMethodManyComponent = (props: ExecutionMethodManyComponentProps) => (
-      <ApolloReactComponents.Query<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables> query={ExecutionMethodManyDocument} {...props} />
-    );
-    
-export type ExecutionMethodManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables> & TChildProps;
-export function withExecutionMethodMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExecutionMethodManyQuery,
-  ExecutionMethodManyQueryVariables,
-  ExecutionMethodManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables, ExecutionMethodManyProps<TChildProps>>(ExecutionMethodManyDocument, {
-      alias: 'executionMethodMany',
-      ...operationOptions
+export const ExecutionMethodManyComponent = (
+    props: ExecutionMethodManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >
+        query={ExecutionMethodManyDocument}
+        {...props}
+    />
+);
+
+export type ExecutionMethodManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ExecutionMethodManyQuery,
+    ExecutionMethodManyQueryVariables
+> &
+    TChildProps;
+export function withExecutionMethodMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables,
+        ExecutionMethodManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables,
+        ExecutionMethodManyProps<TChildProps>
+    >(ExecutionMethodManyDocument, {
+        alias: 'executionMethodMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExecutionMethodManyQuery__
  *
  * To run a query within a React component, call `useExecutionMethodManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useExecutionMethodManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useExecutionMethodManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1121,41 +1446,98 @@ export function withExecutionMethodMany<TProps, TChildProps = {}>(operationOptio
  *   },
  * });
  */
-export function useExecutionMethodManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>(ExecutionMethodManyDocument, baseOptions);
-      }
-export function useExecutionMethodManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>(ExecutionMethodManyDocument, baseOptions);
-        }
-export type ExecutionMethodManyQueryHookResult = ReturnType<typeof useExecutionMethodManyQuery>;
-export type ExecutionMethodManyLazyQueryHookResult = ReturnType<typeof useExecutionMethodManyLazyQuery>;
-export type ExecutionMethodManyQueryResult = ApolloReactCommon.QueryResult<ExecutionMethodManyQuery, ExecutionMethodManyQueryVariables>;
+export function useExecutionMethodManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >(ExecutionMethodManyDocument, baseOptions);
+}
+export function useExecutionMethodManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ExecutionMethodManyQuery,
+        ExecutionMethodManyQueryVariables
+    >(ExecutionMethodManyDocument, baseOptions);
+}
+export type ExecutionMethodManyQueryHookResult = ReturnType<
+    typeof useExecutionMethodManyQuery
+>;
+export type ExecutionMethodManyLazyQueryHookResult = ReturnType<
+    typeof useExecutionMethodManyLazyQuery
+>;
+export type ExecutionMethodManyQueryResult = ApolloReactCommon.QueryResult<
+    ExecutionMethodManyQuery,
+    ExecutionMethodManyQueryVariables
+>;
 export const ExecutionMethodCreateOneDocument = gql`
     mutation ExecutionMethodCreateOne($title: String!) {
-  ExecutionMethodCreateOne(input: {title: $title}) {
-    _id
-    title
-  }
-}
-    `;
-export type ExecutionMethodCreateOneMutationFn = ApolloReactCommon.MutationFunction<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables>;
-export type ExecutionMethodCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables>, 'mutation'>;
+        ExecutionMethodCreateOne(input: { title: $title }) {
+            _id
+            title
+        }
+    }
+`;
+export type ExecutionMethodCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    ExecutionMethodCreateOneMutation,
+    ExecutionMethodCreateOneMutationVariables
+>;
+export type ExecutionMethodCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExecutionMethodCreateOneComponent = (props: ExecutionMethodCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables> mutation={ExecutionMethodCreateOneDocument} {...props} />
-    );
-    
-export type ExecutionMethodCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables> & TChildProps;
-export function withExecutionMethodCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExecutionMethodCreateOneMutation,
-  ExecutionMethodCreateOneMutationVariables,
-  ExecutionMethodCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables, ExecutionMethodCreateOneProps<TChildProps>>(ExecutionMethodCreateOneDocument, {
-      alias: 'executionMethodCreateOne',
-      ...operationOptions
+export const ExecutionMethodCreateOneComponent = (
+    props: ExecutionMethodCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables
+    >
+        mutation={ExecutionMethodCreateOneDocument}
+        {...props}
+    />
+);
+
+export type ExecutionMethodCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExecutionMethodCreateOneMutation,
+    ExecutionMethodCreateOneMutationVariables
+> &
+    TChildProps;
+export function withExecutionMethodCreateOne<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables,
+        ExecutionMethodCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables,
+        ExecutionMethodCreateOneProps<TChildProps>
+    >(ExecutionMethodCreateOneDocument, {
+        alias: 'executionMethodCreateOne',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExecutionMethodCreateOneMutation__
@@ -1174,38 +1556,87 @@ export function withExecutionMethodCreateOne<TProps, TChildProps = {}>(operation
  *   },
  * });
  */
-export function useExecutionMethodCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables>(ExecutionMethodCreateOneDocument, baseOptions);
-      }
-export type ExecutionMethodCreateOneMutationHookResult = ReturnType<typeof useExecutionMethodCreateOneMutation>;
-export type ExecutionMethodCreateOneMutationResult = ApolloReactCommon.MutationResult<ExecutionMethodCreateOneMutation>;
-export type ExecutionMethodCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<ExecutionMethodCreateOneMutation, ExecutionMethodCreateOneMutationVariables>;
+export function useExecutionMethodCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExecutionMethodCreateOneMutation,
+        ExecutionMethodCreateOneMutationVariables
+    >(ExecutionMethodCreateOneDocument, baseOptions);
+}
+export type ExecutionMethodCreateOneMutationHookResult = ReturnType<
+    typeof useExecutionMethodCreateOneMutation
+>;
+export type ExecutionMethodCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    ExecutionMethodCreateOneMutation
+>;
+export type ExecutionMethodCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExecutionMethodCreateOneMutation,
+    ExecutionMethodCreateOneMutationVariables
+>;
 export const ExecutionMethodRemoveByIdDocument = gql`
     mutation ExecutionMethodRemoveById($id: ObjectId!) {
-  ExecutionMethodRemoveById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ExecutionMethodRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables>;
-export type ExecutionMethodRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables>, 'mutation'>;
+        ExecutionMethodRemoveById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExecutionMethodRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ExecutionMethodRemoveByIdMutation,
+    ExecutionMethodRemoveByIdMutationVariables
+>;
+export type ExecutionMethodRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExecutionMethodRemoveByIdComponent = (props: ExecutionMethodRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables> mutation={ExecutionMethodRemoveByIdDocument} {...props} />
-    );
-    
-export type ExecutionMethodRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables> & TChildProps;
-export function withExecutionMethodRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExecutionMethodRemoveByIdMutation,
-  ExecutionMethodRemoveByIdMutationVariables,
-  ExecutionMethodRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables, ExecutionMethodRemoveByIdProps<TChildProps>>(ExecutionMethodRemoveByIdDocument, {
-      alias: 'executionMethodRemoveById',
-      ...operationOptions
+export const ExecutionMethodRemoveByIdComponent = (
+    props: ExecutionMethodRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables
+    >
+        mutation={ExecutionMethodRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type ExecutionMethodRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExecutionMethodRemoveByIdMutation,
+    ExecutionMethodRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withExecutionMethodRemoveById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables,
+        ExecutionMethodRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables,
+        ExecutionMethodRemoveByIdProps<TChildProps>
+    >(ExecutionMethodRemoveByIdDocument, {
+        alias: 'executionMethodRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExecutionMethodRemoveByIdMutation__
@@ -1224,38 +1655,90 @@ export function withExecutionMethodRemoveById<TProps, TChildProps = {}>(operatio
  *   },
  * });
  */
-export function useExecutionMethodRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables>(ExecutionMethodRemoveByIdDocument, baseOptions);
-      }
-export type ExecutionMethodRemoveByIdMutationHookResult = ReturnType<typeof useExecutionMethodRemoveByIdMutation>;
-export type ExecutionMethodRemoveByIdMutationResult = ApolloReactCommon.MutationResult<ExecutionMethodRemoveByIdMutation>;
-export type ExecutionMethodRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ExecutionMethodRemoveByIdMutation, ExecutionMethodRemoveByIdMutationVariables>;
-export const ExecutionMethodUpdateByIdDocument = gql`
-    mutation ExecutionMethodUpdateById($id: ObjectId!, $title: String!) {
-  ExecutionMethodUpdateById(input: {title: $title}, id: $id) {
-    _id
-    title
-  }
+export function useExecutionMethodRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExecutionMethodRemoveByIdMutation,
+        ExecutionMethodRemoveByIdMutationVariables
+    >(ExecutionMethodRemoveByIdDocument, baseOptions);
 }
-    `;
-export type ExecutionMethodUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables>;
-export type ExecutionMethodUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables>, 'mutation'>;
+export type ExecutionMethodRemoveByIdMutationHookResult = ReturnType<
+    typeof useExecutionMethodRemoveByIdMutation
+>;
+export type ExecutionMethodRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    ExecutionMethodRemoveByIdMutation
+>;
+export type ExecutionMethodRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExecutionMethodRemoveByIdMutation,
+    ExecutionMethodRemoveByIdMutationVariables
+>;
+export const ExecutionMethodUpdateByIdDocument = gql`
+    mutation ExecutionMethodUpdateById(
+        $id: ObjectId!
+        $title: String!
+    ) {
+        ExecutionMethodUpdateById(input: { title: $title }, id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExecutionMethodUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ExecutionMethodUpdateByIdMutation,
+    ExecutionMethodUpdateByIdMutationVariables
+>;
+export type ExecutionMethodUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExecutionMethodUpdateByIdComponent = (props: ExecutionMethodUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables> mutation={ExecutionMethodUpdateByIdDocument} {...props} />
-    );
-    
-export type ExecutionMethodUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables> & TChildProps;
-export function withExecutionMethodUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExecutionMethodUpdateByIdMutation,
-  ExecutionMethodUpdateByIdMutationVariables,
-  ExecutionMethodUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables, ExecutionMethodUpdateByIdProps<TChildProps>>(ExecutionMethodUpdateByIdDocument, {
-      alias: 'executionMethodUpdateById',
-      ...operationOptions
+export const ExecutionMethodUpdateByIdComponent = (
+    props: ExecutionMethodUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables
+    >
+        mutation={ExecutionMethodUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type ExecutionMethodUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExecutionMethodUpdateByIdMutation,
+    ExecutionMethodUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withExecutionMethodUpdateById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables,
+        ExecutionMethodUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables,
+        ExecutionMethodUpdateByIdProps<TChildProps>
+    >(ExecutionMethodUpdateByIdDocument, {
+        alias: 'executionMethodUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExecutionMethodUpdateByIdMutation__
@@ -1275,43 +1758,93 @@ export function withExecutionMethodUpdateById<TProps, TChildProps = {}>(operatio
  *   },
  * });
  */
-export function useExecutionMethodUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables>(ExecutionMethodUpdateByIdDocument, baseOptions);
-      }
-export type ExecutionMethodUpdateByIdMutationHookResult = ReturnType<typeof useExecutionMethodUpdateByIdMutation>;
-export type ExecutionMethodUpdateByIdMutationResult = ApolloReactCommon.MutationResult<ExecutionMethodUpdateByIdMutation>;
-export type ExecutionMethodUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ExecutionMethodUpdateByIdMutation, ExecutionMethodUpdateByIdMutationVariables>;
+export function useExecutionMethodUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExecutionMethodUpdateByIdMutation,
+        ExecutionMethodUpdateByIdMutationVariables
+    >(ExecutionMethodUpdateByIdDocument, baseOptions);
+}
+export type ExecutionMethodUpdateByIdMutationHookResult = ReturnType<
+    typeof useExecutionMethodUpdateByIdMutation
+>;
+export type ExecutionMethodUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    ExecutionMethodUpdateByIdMutation
+>;
+export type ExecutionMethodUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExecutionMethodUpdateByIdMutation,
+    ExecutionMethodUpdateByIdMutationVariables
+>;
 export const ExpenditureTypeByIdDocument = gql`
     query ExpenditureTypeById($id: ObjectId!) {
-  ExpenditureTypeById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ExpenditureTypeByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>, 'query'> & ({ variables: ExpenditureTypeByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const ExpenditureTypeByIdComponent = (props: ExpenditureTypeByIdComponentProps) => (
-      <ApolloReactComponents.Query<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables> query={ExpenditureTypeByIdDocument} {...props} />
+        ExpenditureTypeById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExpenditureTypeByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | {
+              variables: ExpenditureTypeByIdQueryVariables;
+              skip?: boolean;
+          }
+        | { skip: boolean }
     );
-    
-export type ExpenditureTypeByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables> & TChildProps;
-export function withExpenditureTypeById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExpenditureTypeByIdQuery,
-  ExpenditureTypeByIdQueryVariables,
-  ExpenditureTypeByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables, ExpenditureTypeByIdProps<TChildProps>>(ExpenditureTypeByIdDocument, {
-      alias: 'expenditureTypeById',
-      ...operationOptions
+
+export const ExpenditureTypeByIdComponent = (
+    props: ExpenditureTypeByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >
+        query={ExpenditureTypeByIdDocument}
+        {...props}
+    />
+);
+
+export type ExpenditureTypeByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ExpenditureTypeByIdQuery,
+    ExpenditureTypeByIdQueryVariables
+> &
+    TChildProps;
+export function withExpenditureTypeById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables,
+        ExpenditureTypeByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables,
+        ExpenditureTypeByIdProps<TChildProps>
+    >(ExpenditureTypeByIdDocument, {
+        alias: 'expenditureTypeById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExpenditureTypeByIdQuery__
  *
  * To run a query within a React component, call `useExpenditureTypeByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useExpenditureTypeByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useExpenditureTypeByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1323,52 +1856,103 @@ export function withExpenditureTypeById<TProps, TChildProps = {}>(operationOptio
  *   },
  * });
  */
-export function useExpenditureTypeByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>(ExpenditureTypeByIdDocument, baseOptions);
-      }
-export function useExpenditureTypeByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>(ExpenditureTypeByIdDocument, baseOptions);
-        }
-export type ExpenditureTypeByIdQueryHookResult = ReturnType<typeof useExpenditureTypeByIdQuery>;
-export type ExpenditureTypeByIdLazyQueryHookResult = ReturnType<typeof useExpenditureTypeByIdLazyQuery>;
-export type ExpenditureTypeByIdQueryResult = ApolloReactCommon.QueryResult<ExpenditureTypeByIdQuery, ExpenditureTypeByIdQueryVariables>;
+export function useExpenditureTypeByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >(ExpenditureTypeByIdDocument, baseOptions);
+}
+export function useExpenditureTypeByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ExpenditureTypeByIdQuery,
+        ExpenditureTypeByIdQueryVariables
+    >(ExpenditureTypeByIdDocument, baseOptions);
+}
+export type ExpenditureTypeByIdQueryHookResult = ReturnType<
+    typeof useExpenditureTypeByIdQuery
+>;
+export type ExpenditureTypeByIdLazyQueryHookResult = ReturnType<
+    typeof useExpenditureTypeByIdLazyQuery
+>;
+export type ExpenditureTypeByIdQueryResult = ApolloReactCommon.QueryResult<
+    ExpenditureTypeByIdQuery,
+    ExpenditureTypeByIdQueryVariables
+>;
 export const ExpenditureTypeManyDocument = gql`
     query ExpenditureTypeMany {
-  ExpenditureTypeMany {
-    _id
-    title
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
+        ExpenditureTypeMany {
+            _id
+            title
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
+        }
     }
-  }
-}
-    `;
-export type ExpenditureTypeManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>, 'query'>;
+`;
+export type ExpenditureTypeManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const ExpenditureTypeManyComponent = (props: ExpenditureTypeManyComponentProps) => (
-      <ApolloReactComponents.Query<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables> query={ExpenditureTypeManyDocument} {...props} />
-    );
-    
-export type ExpenditureTypeManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables> & TChildProps;
-export function withExpenditureTypeMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExpenditureTypeManyQuery,
-  ExpenditureTypeManyQueryVariables,
-  ExpenditureTypeManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables, ExpenditureTypeManyProps<TChildProps>>(ExpenditureTypeManyDocument, {
-      alias: 'expenditureTypeMany',
-      ...operationOptions
+export const ExpenditureTypeManyComponent = (
+    props: ExpenditureTypeManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >
+        query={ExpenditureTypeManyDocument}
+        {...props}
+    />
+);
+
+export type ExpenditureTypeManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ExpenditureTypeManyQuery,
+    ExpenditureTypeManyQueryVariables
+> &
+    TChildProps;
+export function withExpenditureTypeMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables,
+        ExpenditureTypeManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables,
+        ExpenditureTypeManyProps<TChildProps>
+    >(ExpenditureTypeManyDocument, {
+        alias: 'expenditureTypeMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExpenditureTypeManyQuery__
  *
  * To run a query within a React component, call `useExpenditureTypeManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useExpenditureTypeManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useExpenditureTypeManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1379,41 +1963,98 @@ export function withExpenditureTypeMany<TProps, TChildProps = {}>(operationOptio
  *   },
  * });
  */
-export function useExpenditureTypeManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>(ExpenditureTypeManyDocument, baseOptions);
-      }
-export function useExpenditureTypeManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>(ExpenditureTypeManyDocument, baseOptions);
-        }
-export type ExpenditureTypeManyQueryHookResult = ReturnType<typeof useExpenditureTypeManyQuery>;
-export type ExpenditureTypeManyLazyQueryHookResult = ReturnType<typeof useExpenditureTypeManyLazyQuery>;
-export type ExpenditureTypeManyQueryResult = ApolloReactCommon.QueryResult<ExpenditureTypeManyQuery, ExpenditureTypeManyQueryVariables>;
+export function useExpenditureTypeManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >(ExpenditureTypeManyDocument, baseOptions);
+}
+export function useExpenditureTypeManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ExpenditureTypeManyQuery,
+        ExpenditureTypeManyQueryVariables
+    >(ExpenditureTypeManyDocument, baseOptions);
+}
+export type ExpenditureTypeManyQueryHookResult = ReturnType<
+    typeof useExpenditureTypeManyQuery
+>;
+export type ExpenditureTypeManyLazyQueryHookResult = ReturnType<
+    typeof useExpenditureTypeManyLazyQuery
+>;
+export type ExpenditureTypeManyQueryResult = ApolloReactCommon.QueryResult<
+    ExpenditureTypeManyQuery,
+    ExpenditureTypeManyQueryVariables
+>;
 export const ExpenditureTypeCreateOneDocument = gql`
     mutation ExpenditureTypeCreateOne($title: String!) {
-  ExpenditureTypeCreateOne(input: {title: $title}) {
-    _id
-    title
-  }
-}
-    `;
-export type ExpenditureTypeCreateOneMutationFn = ApolloReactCommon.MutationFunction<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables>;
-export type ExpenditureTypeCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables>, 'mutation'>;
+        ExpenditureTypeCreateOne(input: { title: $title }) {
+            _id
+            title
+        }
+    }
+`;
+export type ExpenditureTypeCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    ExpenditureTypeCreateOneMutation,
+    ExpenditureTypeCreateOneMutationVariables
+>;
+export type ExpenditureTypeCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExpenditureTypeCreateOneComponent = (props: ExpenditureTypeCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables> mutation={ExpenditureTypeCreateOneDocument} {...props} />
-    );
-    
-export type ExpenditureTypeCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables> & TChildProps;
-export function withExpenditureTypeCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExpenditureTypeCreateOneMutation,
-  ExpenditureTypeCreateOneMutationVariables,
-  ExpenditureTypeCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables, ExpenditureTypeCreateOneProps<TChildProps>>(ExpenditureTypeCreateOneDocument, {
-      alias: 'expenditureTypeCreateOne',
-      ...operationOptions
+export const ExpenditureTypeCreateOneComponent = (
+    props: ExpenditureTypeCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables
+    >
+        mutation={ExpenditureTypeCreateOneDocument}
+        {...props}
+    />
+);
+
+export type ExpenditureTypeCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExpenditureTypeCreateOneMutation,
+    ExpenditureTypeCreateOneMutationVariables
+> &
+    TChildProps;
+export function withExpenditureTypeCreateOne<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables,
+        ExpenditureTypeCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables,
+        ExpenditureTypeCreateOneProps<TChildProps>
+    >(ExpenditureTypeCreateOneDocument, {
+        alias: 'expenditureTypeCreateOne',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExpenditureTypeCreateOneMutation__
@@ -1432,38 +2073,87 @@ export function withExpenditureTypeCreateOne<TProps, TChildProps = {}>(operation
  *   },
  * });
  */
-export function useExpenditureTypeCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables>(ExpenditureTypeCreateOneDocument, baseOptions);
-      }
-export type ExpenditureTypeCreateOneMutationHookResult = ReturnType<typeof useExpenditureTypeCreateOneMutation>;
-export type ExpenditureTypeCreateOneMutationResult = ApolloReactCommon.MutationResult<ExpenditureTypeCreateOneMutation>;
-export type ExpenditureTypeCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<ExpenditureTypeCreateOneMutation, ExpenditureTypeCreateOneMutationVariables>;
+export function useExpenditureTypeCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExpenditureTypeCreateOneMutation,
+        ExpenditureTypeCreateOneMutationVariables
+    >(ExpenditureTypeCreateOneDocument, baseOptions);
+}
+export type ExpenditureTypeCreateOneMutationHookResult = ReturnType<
+    typeof useExpenditureTypeCreateOneMutation
+>;
+export type ExpenditureTypeCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    ExpenditureTypeCreateOneMutation
+>;
+export type ExpenditureTypeCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExpenditureTypeCreateOneMutation,
+    ExpenditureTypeCreateOneMutationVariables
+>;
 export const ExpenditureTypeRemoveByIdDocument = gql`
     mutation ExpenditureTypeRemoveById($id: ObjectId!) {
-  ExpenditureTypeRemoveById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ExpenditureTypeRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables>;
-export type ExpenditureTypeRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables>, 'mutation'>;
+        ExpenditureTypeRemoveById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExpenditureTypeRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ExpenditureTypeRemoveByIdMutation,
+    ExpenditureTypeRemoveByIdMutationVariables
+>;
+export type ExpenditureTypeRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExpenditureTypeRemoveByIdComponent = (props: ExpenditureTypeRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables> mutation={ExpenditureTypeRemoveByIdDocument} {...props} />
-    );
-    
-export type ExpenditureTypeRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables> & TChildProps;
-export function withExpenditureTypeRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExpenditureTypeRemoveByIdMutation,
-  ExpenditureTypeRemoveByIdMutationVariables,
-  ExpenditureTypeRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables, ExpenditureTypeRemoveByIdProps<TChildProps>>(ExpenditureTypeRemoveByIdDocument, {
-      alias: 'expenditureTypeRemoveById',
-      ...operationOptions
+export const ExpenditureTypeRemoveByIdComponent = (
+    props: ExpenditureTypeRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables
+    >
+        mutation={ExpenditureTypeRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type ExpenditureTypeRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExpenditureTypeRemoveByIdMutation,
+    ExpenditureTypeRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withExpenditureTypeRemoveById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables,
+        ExpenditureTypeRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables,
+        ExpenditureTypeRemoveByIdProps<TChildProps>
+    >(ExpenditureTypeRemoveByIdDocument, {
+        alias: 'expenditureTypeRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExpenditureTypeRemoveByIdMutation__
@@ -1482,38 +2172,90 @@ export function withExpenditureTypeRemoveById<TProps, TChildProps = {}>(operatio
  *   },
  * });
  */
-export function useExpenditureTypeRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables>(ExpenditureTypeRemoveByIdDocument, baseOptions);
-      }
-export type ExpenditureTypeRemoveByIdMutationHookResult = ReturnType<typeof useExpenditureTypeRemoveByIdMutation>;
-export type ExpenditureTypeRemoveByIdMutationResult = ApolloReactCommon.MutationResult<ExpenditureTypeRemoveByIdMutation>;
-export type ExpenditureTypeRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ExpenditureTypeRemoveByIdMutation, ExpenditureTypeRemoveByIdMutationVariables>;
-export const ExpenditureTypeUpdateByIdDocument = gql`
-    mutation ExpenditureTypeUpdateById($id: ObjectId!, $title: String!) {
-  ExpenditureTypeUpdateById(input: {title: $title}, id: $id) {
-    _id
-    title
-  }
+export function useExpenditureTypeRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExpenditureTypeRemoveByIdMutation,
+        ExpenditureTypeRemoveByIdMutationVariables
+    >(ExpenditureTypeRemoveByIdDocument, baseOptions);
 }
-    `;
-export type ExpenditureTypeUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables>;
-export type ExpenditureTypeUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables>, 'mutation'>;
+export type ExpenditureTypeRemoveByIdMutationHookResult = ReturnType<
+    typeof useExpenditureTypeRemoveByIdMutation
+>;
+export type ExpenditureTypeRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    ExpenditureTypeRemoveByIdMutation
+>;
+export type ExpenditureTypeRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExpenditureTypeRemoveByIdMutation,
+    ExpenditureTypeRemoveByIdMutationVariables
+>;
+export const ExpenditureTypeUpdateByIdDocument = gql`
+    mutation ExpenditureTypeUpdateById(
+        $id: ObjectId!
+        $title: String!
+    ) {
+        ExpenditureTypeUpdateById(input: { title: $title }, id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ExpenditureTypeUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ExpenditureTypeUpdateByIdMutation,
+    ExpenditureTypeUpdateByIdMutationVariables
+>;
+export type ExpenditureTypeUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ExpenditureTypeUpdateByIdComponent = (props: ExpenditureTypeUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables> mutation={ExpenditureTypeUpdateByIdDocument} {...props} />
-    );
-    
-export type ExpenditureTypeUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables> & TChildProps;
-export function withExpenditureTypeUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ExpenditureTypeUpdateByIdMutation,
-  ExpenditureTypeUpdateByIdMutationVariables,
-  ExpenditureTypeUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables, ExpenditureTypeUpdateByIdProps<TChildProps>>(ExpenditureTypeUpdateByIdDocument, {
-      alias: 'expenditureTypeUpdateById',
-      ...operationOptions
+export const ExpenditureTypeUpdateByIdComponent = (
+    props: ExpenditureTypeUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables
+    >
+        mutation={ExpenditureTypeUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type ExpenditureTypeUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ExpenditureTypeUpdateByIdMutation,
+    ExpenditureTypeUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withExpenditureTypeUpdateById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables,
+        ExpenditureTypeUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables,
+        ExpenditureTypeUpdateByIdProps<TChildProps>
+    >(ExpenditureTypeUpdateByIdDocument, {
+        alias: 'expenditureTypeUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useExpenditureTypeUpdateByIdMutation__
@@ -1533,43 +2275,93 @@ export function withExpenditureTypeUpdateById<TProps, TChildProps = {}>(operatio
  *   },
  * });
  */
-export function useExpenditureTypeUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables>(ExpenditureTypeUpdateByIdDocument, baseOptions);
-      }
-export type ExpenditureTypeUpdateByIdMutationHookResult = ReturnType<typeof useExpenditureTypeUpdateByIdMutation>;
-export type ExpenditureTypeUpdateByIdMutationResult = ApolloReactCommon.MutationResult<ExpenditureTypeUpdateByIdMutation>;
-export type ExpenditureTypeUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ExpenditureTypeUpdateByIdMutation, ExpenditureTypeUpdateByIdMutationVariables>;
+export function useExpenditureTypeUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ExpenditureTypeUpdateByIdMutation,
+        ExpenditureTypeUpdateByIdMutationVariables
+    >(ExpenditureTypeUpdateByIdDocument, baseOptions);
+}
+export type ExpenditureTypeUpdateByIdMutationHookResult = ReturnType<
+    typeof useExpenditureTypeUpdateByIdMutation
+>;
+export type ExpenditureTypeUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    ExpenditureTypeUpdateByIdMutation
+>;
+export type ExpenditureTypeUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ExpenditureTypeUpdateByIdMutation,
+    ExpenditureTypeUpdateByIdMutationVariables
+>;
 export const MfpIndicatorByIdDocument = gql`
     query MfpIndicatorById($id: ObjectId!) {
-  MfpIndicatorById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type MfpIndicatorByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>, 'query'> & ({ variables: MfpIndicatorByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const MfpIndicatorByIdComponent = (props: MfpIndicatorByIdComponentProps) => (
-      <ApolloReactComponents.Query<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables> query={MfpIndicatorByIdDocument} {...props} />
+        MfpIndicatorById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type MfpIndicatorByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | {
+              variables: MfpIndicatorByIdQueryVariables;
+              skip?: boolean;
+          }
+        | { skip: boolean }
     );
-    
-export type MfpIndicatorByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables> & TChildProps;
-export function withMfpIndicatorById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  MfpIndicatorByIdQuery,
-  MfpIndicatorByIdQueryVariables,
-  MfpIndicatorByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables, MfpIndicatorByIdProps<TChildProps>>(MfpIndicatorByIdDocument, {
-      alias: 'mfpIndicatorById',
-      ...operationOptions
+
+export const MfpIndicatorByIdComponent = (
+    props: MfpIndicatorByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >
+        query={MfpIndicatorByIdDocument}
+        {...props}
+    />
+);
+
+export type MfpIndicatorByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    MfpIndicatorByIdQuery,
+    MfpIndicatorByIdQueryVariables
+> &
+    TChildProps;
+export function withMfpIndicatorById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables,
+        MfpIndicatorByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables,
+        MfpIndicatorByIdProps<TChildProps>
+    >(MfpIndicatorByIdDocument, {
+        alias: 'mfpIndicatorById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useMfpIndicatorByIdQuery__
  *
  * To run a query within a React component, call `useMfpIndicatorByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useMfpIndicatorByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useMfpIndicatorByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1581,52 +2373,103 @@ export function withMfpIndicatorById<TProps, TChildProps = {}>(operationOptions?
  *   },
  * });
  */
-export function useMfpIndicatorByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>(MfpIndicatorByIdDocument, baseOptions);
-      }
-export function useMfpIndicatorByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>(MfpIndicatorByIdDocument, baseOptions);
-        }
-export type MfpIndicatorByIdQueryHookResult = ReturnType<typeof useMfpIndicatorByIdQuery>;
-export type MfpIndicatorByIdLazyQueryHookResult = ReturnType<typeof useMfpIndicatorByIdLazyQuery>;
-export type MfpIndicatorByIdQueryResult = ApolloReactCommon.QueryResult<MfpIndicatorByIdQuery, MfpIndicatorByIdQueryVariables>;
+export function useMfpIndicatorByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >(MfpIndicatorByIdDocument, baseOptions);
+}
+export function useMfpIndicatorByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        MfpIndicatorByIdQuery,
+        MfpIndicatorByIdQueryVariables
+    >(MfpIndicatorByIdDocument, baseOptions);
+}
+export type MfpIndicatorByIdQueryHookResult = ReturnType<
+    typeof useMfpIndicatorByIdQuery
+>;
+export type MfpIndicatorByIdLazyQueryHookResult = ReturnType<
+    typeof useMfpIndicatorByIdLazyQuery
+>;
+export type MfpIndicatorByIdQueryResult = ApolloReactCommon.QueryResult<
+    MfpIndicatorByIdQuery,
+    MfpIndicatorByIdQueryVariables
+>;
 export const MfpIndicatorManyDocument = gql`
     query MfpIndicatorMany {
-  MfpIndicatorMany {
-    _id
-    title
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
+        MfpIndicatorMany {
+            _id
+            title
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
+        }
     }
-  }
-}
-    `;
-export type MfpIndicatorManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>, 'query'>;
+`;
+export type MfpIndicatorManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const MfpIndicatorManyComponent = (props: MfpIndicatorManyComponentProps) => (
-      <ApolloReactComponents.Query<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables> query={MfpIndicatorManyDocument} {...props} />
-    );
-    
-export type MfpIndicatorManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables> & TChildProps;
-export function withMfpIndicatorMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  MfpIndicatorManyQuery,
-  MfpIndicatorManyQueryVariables,
-  MfpIndicatorManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables, MfpIndicatorManyProps<TChildProps>>(MfpIndicatorManyDocument, {
-      alias: 'mfpIndicatorMany',
-      ...operationOptions
+export const MfpIndicatorManyComponent = (
+    props: MfpIndicatorManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >
+        query={MfpIndicatorManyDocument}
+        {...props}
+    />
+);
+
+export type MfpIndicatorManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    MfpIndicatorManyQuery,
+    MfpIndicatorManyQueryVariables
+> &
+    TChildProps;
+export function withMfpIndicatorMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables,
+        MfpIndicatorManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables,
+        MfpIndicatorManyProps<TChildProps>
+    >(MfpIndicatorManyDocument, {
+        alias: 'mfpIndicatorMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useMfpIndicatorManyQuery__
  *
  * To run a query within a React component, call `useMfpIndicatorManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useMfpIndicatorManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useMfpIndicatorManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1637,41 +2480,95 @@ export function withMfpIndicatorMany<TProps, TChildProps = {}>(operationOptions?
  *   },
  * });
  */
-export function useMfpIndicatorManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>(MfpIndicatorManyDocument, baseOptions);
-      }
-export function useMfpIndicatorManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>(MfpIndicatorManyDocument, baseOptions);
-        }
-export type MfpIndicatorManyQueryHookResult = ReturnType<typeof useMfpIndicatorManyQuery>;
-export type MfpIndicatorManyLazyQueryHookResult = ReturnType<typeof useMfpIndicatorManyLazyQuery>;
-export type MfpIndicatorManyQueryResult = ApolloReactCommon.QueryResult<MfpIndicatorManyQuery, MfpIndicatorManyQueryVariables>;
+export function useMfpIndicatorManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >(MfpIndicatorManyDocument, baseOptions);
+}
+export function useMfpIndicatorManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        MfpIndicatorManyQuery,
+        MfpIndicatorManyQueryVariables
+    >(MfpIndicatorManyDocument, baseOptions);
+}
+export type MfpIndicatorManyQueryHookResult = ReturnType<
+    typeof useMfpIndicatorManyQuery
+>;
+export type MfpIndicatorManyLazyQueryHookResult = ReturnType<
+    typeof useMfpIndicatorManyLazyQuery
+>;
+export type MfpIndicatorManyQueryResult = ApolloReactCommon.QueryResult<
+    MfpIndicatorManyQuery,
+    MfpIndicatorManyQueryVariables
+>;
 export const MfpIndicatorCreateOneDocument = gql`
     mutation MfpIndicatorCreateOne($title: String!) {
-  MfpIndicatorCreateOne(input: {title: $title}) {
-    _id
-    title
-  }
-}
-    `;
-export type MfpIndicatorCreateOneMutationFn = ApolloReactCommon.MutationFunction<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables>;
-export type MfpIndicatorCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables>, 'mutation'>;
+        MfpIndicatorCreateOne(input: { title: $title }) {
+            _id
+            title
+        }
+    }
+`;
+export type MfpIndicatorCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    MfpIndicatorCreateOneMutation,
+    MfpIndicatorCreateOneMutationVariables
+>;
+export type MfpIndicatorCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const MfpIndicatorCreateOneComponent = (props: MfpIndicatorCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables> mutation={MfpIndicatorCreateOneDocument} {...props} />
-    );
-    
-export type MfpIndicatorCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables> & TChildProps;
-export function withMfpIndicatorCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  MfpIndicatorCreateOneMutation,
-  MfpIndicatorCreateOneMutationVariables,
-  MfpIndicatorCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables, MfpIndicatorCreateOneProps<TChildProps>>(MfpIndicatorCreateOneDocument, {
-      alias: 'mfpIndicatorCreateOne',
-      ...operationOptions
+export const MfpIndicatorCreateOneComponent = (
+    props: MfpIndicatorCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables
+    >
+        mutation={MfpIndicatorCreateOneDocument}
+        {...props}
+    />
+);
+
+export type MfpIndicatorCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    MfpIndicatorCreateOneMutation,
+    MfpIndicatorCreateOneMutationVariables
+> &
+    TChildProps;
+export function withMfpIndicatorCreateOne<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables,
+        MfpIndicatorCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables,
+        MfpIndicatorCreateOneProps<TChildProps>
+    >(MfpIndicatorCreateOneDocument, {
+        alias: 'mfpIndicatorCreateOne',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useMfpIndicatorCreateOneMutation__
@@ -1690,38 +2587,84 @@ export function withMfpIndicatorCreateOne<TProps, TChildProps = {}>(operationOpt
  *   },
  * });
  */
-export function useMfpIndicatorCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables>(MfpIndicatorCreateOneDocument, baseOptions);
-      }
-export type MfpIndicatorCreateOneMutationHookResult = ReturnType<typeof useMfpIndicatorCreateOneMutation>;
-export type MfpIndicatorCreateOneMutationResult = ApolloReactCommon.MutationResult<MfpIndicatorCreateOneMutation>;
-export type MfpIndicatorCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<MfpIndicatorCreateOneMutation, MfpIndicatorCreateOneMutationVariables>;
+export function useMfpIndicatorCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        MfpIndicatorCreateOneMutation,
+        MfpIndicatorCreateOneMutationVariables
+    >(MfpIndicatorCreateOneDocument, baseOptions);
+}
+export type MfpIndicatorCreateOneMutationHookResult = ReturnType<
+    typeof useMfpIndicatorCreateOneMutation
+>;
+export type MfpIndicatorCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    MfpIndicatorCreateOneMutation
+>;
+export type MfpIndicatorCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    MfpIndicatorCreateOneMutation,
+    MfpIndicatorCreateOneMutationVariables
+>;
 export const MfpIndicatorRemoveByIdDocument = gql`
     mutation MfpIndicatorRemoveById($id: ObjectId!) {
-  MfpIndicatorRemoveById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type MfpIndicatorRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables>;
-export type MfpIndicatorRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables>, 'mutation'>;
+        MfpIndicatorRemoveById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type MfpIndicatorRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    MfpIndicatorRemoveByIdMutation,
+    MfpIndicatorRemoveByIdMutationVariables
+>;
+export type MfpIndicatorRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const MfpIndicatorRemoveByIdComponent = (props: MfpIndicatorRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables> mutation={MfpIndicatorRemoveByIdDocument} {...props} />
-    );
-    
-export type MfpIndicatorRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables> & TChildProps;
-export function withMfpIndicatorRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  MfpIndicatorRemoveByIdMutation,
-  MfpIndicatorRemoveByIdMutationVariables,
-  MfpIndicatorRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables, MfpIndicatorRemoveByIdProps<TChildProps>>(MfpIndicatorRemoveByIdDocument, {
-      alias: 'mfpIndicatorRemoveById',
-      ...operationOptions
+export const MfpIndicatorRemoveByIdComponent = (
+    props: MfpIndicatorRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables
+    >
+        mutation={MfpIndicatorRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type MfpIndicatorRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    MfpIndicatorRemoveByIdMutation,
+    MfpIndicatorRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withMfpIndicatorRemoveById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables,
+        MfpIndicatorRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables,
+        MfpIndicatorRemoveByIdProps<TChildProps>
+    >(MfpIndicatorRemoveByIdDocument, {
+        alias: 'mfpIndicatorRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useMfpIndicatorRemoveByIdMutation__
@@ -1740,38 +2683,84 @@ export function withMfpIndicatorRemoveById<TProps, TChildProps = {}>(operationOp
  *   },
  * });
  */
-export function useMfpIndicatorRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables>(MfpIndicatorRemoveByIdDocument, baseOptions);
-      }
-export type MfpIndicatorRemoveByIdMutationHookResult = ReturnType<typeof useMfpIndicatorRemoveByIdMutation>;
-export type MfpIndicatorRemoveByIdMutationResult = ApolloReactCommon.MutationResult<MfpIndicatorRemoveByIdMutation>;
-export type MfpIndicatorRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<MfpIndicatorRemoveByIdMutation, MfpIndicatorRemoveByIdMutationVariables>;
+export function useMfpIndicatorRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        MfpIndicatorRemoveByIdMutation,
+        MfpIndicatorRemoveByIdMutationVariables
+    >(MfpIndicatorRemoveByIdDocument, baseOptions);
+}
+export type MfpIndicatorRemoveByIdMutationHookResult = ReturnType<
+    typeof useMfpIndicatorRemoveByIdMutation
+>;
+export type MfpIndicatorRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    MfpIndicatorRemoveByIdMutation
+>;
+export type MfpIndicatorRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    MfpIndicatorRemoveByIdMutation,
+    MfpIndicatorRemoveByIdMutationVariables
+>;
 export const MfpIndicatorUpdateByIdDocument = gql`
     mutation MfpIndicatorUpdateById($id: ObjectId!, $title: String!) {
-  MfpIndicatorUpdateById(input: {title: $title}, id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type MfpIndicatorUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables>;
-export type MfpIndicatorUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables>, 'mutation'>;
+        MfpIndicatorUpdateById(input: { title: $title }, id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type MfpIndicatorUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    MfpIndicatorUpdateByIdMutation,
+    MfpIndicatorUpdateByIdMutationVariables
+>;
+export type MfpIndicatorUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const MfpIndicatorUpdateByIdComponent = (props: MfpIndicatorUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables> mutation={MfpIndicatorUpdateByIdDocument} {...props} />
-    );
-    
-export type MfpIndicatorUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables> & TChildProps;
-export function withMfpIndicatorUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  MfpIndicatorUpdateByIdMutation,
-  MfpIndicatorUpdateByIdMutationVariables,
-  MfpIndicatorUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables, MfpIndicatorUpdateByIdProps<TChildProps>>(MfpIndicatorUpdateByIdDocument, {
-      alias: 'mfpIndicatorUpdateById',
-      ...operationOptions
+export const MfpIndicatorUpdateByIdComponent = (
+    props: MfpIndicatorUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables
+    >
+        mutation={MfpIndicatorUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type MfpIndicatorUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    MfpIndicatorUpdateByIdMutation,
+    MfpIndicatorUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withMfpIndicatorUpdateById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables,
+        MfpIndicatorUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables,
+        MfpIndicatorUpdateByIdProps<TChildProps>
+    >(MfpIndicatorUpdateByIdDocument, {
+        alias: 'mfpIndicatorUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useMfpIndicatorUpdateByIdMutation__
@@ -1791,43 +2780,90 @@ export function withMfpIndicatorUpdateById<TProps, TChildProps = {}>(operationOp
  *   },
  * });
  */
-export function useMfpIndicatorUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables>(MfpIndicatorUpdateByIdDocument, baseOptions);
-      }
-export type MfpIndicatorUpdateByIdMutationHookResult = ReturnType<typeof useMfpIndicatorUpdateByIdMutation>;
-export type MfpIndicatorUpdateByIdMutationResult = ApolloReactCommon.MutationResult<MfpIndicatorUpdateByIdMutation>;
-export type MfpIndicatorUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<MfpIndicatorUpdateByIdMutation, MfpIndicatorUpdateByIdMutationVariables>;
+export function useMfpIndicatorUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        MfpIndicatorUpdateByIdMutation,
+        MfpIndicatorUpdateByIdMutationVariables
+    >(MfpIndicatorUpdateByIdDocument, baseOptions);
+}
+export type MfpIndicatorUpdateByIdMutationHookResult = ReturnType<
+    typeof useMfpIndicatorUpdateByIdMutation
+>;
+export type MfpIndicatorUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    MfpIndicatorUpdateByIdMutation
+>;
+export type MfpIndicatorUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    MfpIndicatorUpdateByIdMutation,
+    MfpIndicatorUpdateByIdMutationVariables
+>;
 export const ProgramByIdDocument = gql`
     query ProgramById($id: ObjectId!) {
-  ProgramById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ProgramByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ProgramByIdQuery, ProgramByIdQueryVariables>, 'query'> & ({ variables: ProgramByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const ProgramByIdComponent = (props: ProgramByIdComponentProps) => (
-      <ApolloReactComponents.Query<ProgramByIdQuery, ProgramByIdQueryVariables> query={ProgramByIdDocument} {...props} />
+        ProgramById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ProgramByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | { variables: ProgramByIdQueryVariables; skip?: boolean }
+        | { skip: boolean }
     );
-    
-export type ProgramByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<ProgramByIdQuery, ProgramByIdQueryVariables> & TChildProps;
-export function withProgramById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ProgramByIdQuery,
-  ProgramByIdQueryVariables,
-  ProgramByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ProgramByIdQuery, ProgramByIdQueryVariables, ProgramByIdProps<TChildProps>>(ProgramByIdDocument, {
-      alias: 'programById',
-      ...operationOptions
+
+export const ProgramByIdComponent = (
+    props: ProgramByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >
+        query={ProgramByIdDocument}
+        {...props}
+    />
+);
+
+export type ProgramByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ProgramByIdQuery,
+    ProgramByIdQueryVariables
+> &
+    TChildProps;
+export function withProgramById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables,
+        ProgramByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables,
+        ProgramByIdProps<TChildProps>
+    >(ProgramByIdDocument, {
+        alias: 'programById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useProgramByIdQuery__
  *
  * To run a query within a React component, call `useProgramByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useProgramByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useProgramByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1839,52 +2875,103 @@ export function withProgramById<TProps, TChildProps = {}>(operationOptions?: Apo
  *   },
  * });
  */
-export function useProgramByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ProgramByIdQuery, ProgramByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<ProgramByIdQuery, ProgramByIdQueryVariables>(ProgramByIdDocument, baseOptions);
-      }
-export function useProgramByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ProgramByIdQuery, ProgramByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ProgramByIdQuery, ProgramByIdQueryVariables>(ProgramByIdDocument, baseOptions);
-        }
-export type ProgramByIdQueryHookResult = ReturnType<typeof useProgramByIdQuery>;
-export type ProgramByIdLazyQueryHookResult = ReturnType<typeof useProgramByIdLazyQuery>;
-export type ProgramByIdQueryResult = ApolloReactCommon.QueryResult<ProgramByIdQuery, ProgramByIdQueryVariables>;
+export function useProgramByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >(ProgramByIdDocument, baseOptions);
+}
+export function useProgramByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ProgramByIdQuery,
+        ProgramByIdQueryVariables
+    >(ProgramByIdDocument, baseOptions);
+}
+export type ProgramByIdQueryHookResult = ReturnType<
+    typeof useProgramByIdQuery
+>;
+export type ProgramByIdLazyQueryHookResult = ReturnType<
+    typeof useProgramByIdLazyQuery
+>;
+export type ProgramByIdQueryResult = ApolloReactCommon.QueryResult<
+    ProgramByIdQuery,
+    ProgramByIdQueryVariables
+>;
 export const ProgramManyDocument = gql`
     query ProgramMany {
-  ProgramMany {
-    _id
-    title
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
+        ProgramMany {
+            _id
+            title
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
+        }
     }
-  }
-}
-    `;
-export type ProgramManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ProgramManyQuery, ProgramManyQueryVariables>, 'query'>;
+`;
+export type ProgramManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const ProgramManyComponent = (props: ProgramManyComponentProps) => (
-      <ApolloReactComponents.Query<ProgramManyQuery, ProgramManyQueryVariables> query={ProgramManyDocument} {...props} />
-    );
-    
-export type ProgramManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<ProgramManyQuery, ProgramManyQueryVariables> & TChildProps;
-export function withProgramMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ProgramManyQuery,
-  ProgramManyQueryVariables,
-  ProgramManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ProgramManyQuery, ProgramManyQueryVariables, ProgramManyProps<TChildProps>>(ProgramManyDocument, {
-      alias: 'programMany',
-      ...operationOptions
+export const ProgramManyComponent = (
+    props: ProgramManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >
+        query={ProgramManyDocument}
+        {...props}
+    />
+);
+
+export type ProgramManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    ProgramManyQuery,
+    ProgramManyQueryVariables
+> &
+    TChildProps;
+export function withProgramMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ProgramManyQuery,
+        ProgramManyQueryVariables,
+        ProgramManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        ProgramManyQuery,
+        ProgramManyQueryVariables,
+        ProgramManyProps<TChildProps>
+    >(ProgramManyDocument, {
+        alias: 'programMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useProgramManyQuery__
  *
  * To run a query within a React component, call `useProgramManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useProgramManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useProgramManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -1895,41 +2982,95 @@ export function withProgramMany<TProps, TChildProps = {}>(operationOptions?: Apo
  *   },
  * });
  */
-export function useProgramManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<ProgramManyQuery, ProgramManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<ProgramManyQuery, ProgramManyQueryVariables>(ProgramManyDocument, baseOptions);
-      }
-export function useProgramManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<ProgramManyQuery, ProgramManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<ProgramManyQuery, ProgramManyQueryVariables>(ProgramManyDocument, baseOptions);
-        }
-export type ProgramManyQueryHookResult = ReturnType<typeof useProgramManyQuery>;
-export type ProgramManyLazyQueryHookResult = ReturnType<typeof useProgramManyLazyQuery>;
-export type ProgramManyQueryResult = ApolloReactCommon.QueryResult<ProgramManyQuery, ProgramManyQueryVariables>;
+export function useProgramManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >(ProgramManyDocument, baseOptions);
+}
+export function useProgramManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        ProgramManyQuery,
+        ProgramManyQueryVariables
+    >(ProgramManyDocument, baseOptions);
+}
+export type ProgramManyQueryHookResult = ReturnType<
+    typeof useProgramManyQuery
+>;
+export type ProgramManyLazyQueryHookResult = ReturnType<
+    typeof useProgramManyLazyQuery
+>;
+export type ProgramManyQueryResult = ApolloReactCommon.QueryResult<
+    ProgramManyQuery,
+    ProgramManyQueryVariables
+>;
 export const ProgramCreateOneDocument = gql`
     mutation ProgramCreateOne($title: String!) {
-  ProgramCreateOne(input: {title: $title}) {
-    _id
-    title
-  }
-}
-    `;
-export type ProgramCreateOneMutationFn = ApolloReactCommon.MutationFunction<ProgramCreateOneMutation, ProgramCreateOneMutationVariables>;
-export type ProgramCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ProgramCreateOneMutation, ProgramCreateOneMutationVariables>, 'mutation'>;
+        ProgramCreateOne(input: { title: $title }) {
+            _id
+            title
+        }
+    }
+`;
+export type ProgramCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    ProgramCreateOneMutation,
+    ProgramCreateOneMutationVariables
+>;
+export type ProgramCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ProgramCreateOneComponent = (props: ProgramCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<ProgramCreateOneMutation, ProgramCreateOneMutationVariables> mutation={ProgramCreateOneDocument} {...props} />
-    );
-    
-export type ProgramCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ProgramCreateOneMutation, ProgramCreateOneMutationVariables> & TChildProps;
-export function withProgramCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ProgramCreateOneMutation,
-  ProgramCreateOneMutationVariables,
-  ProgramCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ProgramCreateOneMutation, ProgramCreateOneMutationVariables, ProgramCreateOneProps<TChildProps>>(ProgramCreateOneDocument, {
-      alias: 'programCreateOne',
-      ...operationOptions
+export const ProgramCreateOneComponent = (
+    props: ProgramCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables
+    >
+        mutation={ProgramCreateOneDocument}
+        {...props}
+    />
+);
+
+export type ProgramCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ProgramCreateOneMutation,
+    ProgramCreateOneMutationVariables
+> &
+    TChildProps;
+export function withProgramCreateOne<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables,
+        ProgramCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables,
+        ProgramCreateOneProps<TChildProps>
+    >(ProgramCreateOneDocument, {
+        alias: 'programCreateOne',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useProgramCreateOneMutation__
@@ -1948,38 +3089,84 @@ export function withProgramCreateOne<TProps, TChildProps = {}>(operationOptions?
  *   },
  * });
  */
-export function useProgramCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ProgramCreateOneMutation, ProgramCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<ProgramCreateOneMutation, ProgramCreateOneMutationVariables>(ProgramCreateOneDocument, baseOptions);
-      }
-export type ProgramCreateOneMutationHookResult = ReturnType<typeof useProgramCreateOneMutation>;
-export type ProgramCreateOneMutationResult = ApolloReactCommon.MutationResult<ProgramCreateOneMutation>;
-export type ProgramCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<ProgramCreateOneMutation, ProgramCreateOneMutationVariables>;
+export function useProgramCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ProgramCreateOneMutation,
+        ProgramCreateOneMutationVariables
+    >(ProgramCreateOneDocument, baseOptions);
+}
+export type ProgramCreateOneMutationHookResult = ReturnType<
+    typeof useProgramCreateOneMutation
+>;
+export type ProgramCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    ProgramCreateOneMutation
+>;
+export type ProgramCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ProgramCreateOneMutation,
+    ProgramCreateOneMutationVariables
+>;
 export const ProgramRemoveByIdDocument = gql`
     mutation ProgramRemoveById($id: ObjectId!) {
-  ProgramRemoveById(id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ProgramRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables>;
-export type ProgramRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables>, 'mutation'>;
+        ProgramRemoveById(id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ProgramRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ProgramRemoveByIdMutation,
+    ProgramRemoveByIdMutationVariables
+>;
+export type ProgramRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ProgramRemoveByIdComponent = (props: ProgramRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables> mutation={ProgramRemoveByIdDocument} {...props} />
-    );
-    
-export type ProgramRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables> & TChildProps;
-export function withProgramRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ProgramRemoveByIdMutation,
-  ProgramRemoveByIdMutationVariables,
-  ProgramRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables, ProgramRemoveByIdProps<TChildProps>>(ProgramRemoveByIdDocument, {
-      alias: 'programRemoveById',
-      ...operationOptions
+export const ProgramRemoveByIdComponent = (
+    props: ProgramRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables
+    >
+        mutation={ProgramRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type ProgramRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ProgramRemoveByIdMutation,
+    ProgramRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withProgramRemoveById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables,
+        ProgramRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables,
+        ProgramRemoveByIdProps<TChildProps>
+    >(ProgramRemoveByIdDocument, {
+        alias: 'programRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useProgramRemoveByIdMutation__
@@ -1998,38 +3185,84 @@ export function withProgramRemoveById<TProps, TChildProps = {}>(operationOptions
  *   },
  * });
  */
-export function useProgramRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables>(ProgramRemoveByIdDocument, baseOptions);
-      }
-export type ProgramRemoveByIdMutationHookResult = ReturnType<typeof useProgramRemoveByIdMutation>;
-export type ProgramRemoveByIdMutationResult = ApolloReactCommon.MutationResult<ProgramRemoveByIdMutation>;
-export type ProgramRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ProgramRemoveByIdMutation, ProgramRemoveByIdMutationVariables>;
+export function useProgramRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ProgramRemoveByIdMutation,
+        ProgramRemoveByIdMutationVariables
+    >(ProgramRemoveByIdDocument, baseOptions);
+}
+export type ProgramRemoveByIdMutationHookResult = ReturnType<
+    typeof useProgramRemoveByIdMutation
+>;
+export type ProgramRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    ProgramRemoveByIdMutation
+>;
+export type ProgramRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ProgramRemoveByIdMutation,
+    ProgramRemoveByIdMutationVariables
+>;
 export const ProgramUpdateByIdDocument = gql`
     mutation ProgramUpdateById($id: ObjectId!, $title: String!) {
-  ProgramUpdateById(input: {title: $title}, id: $id) {
-    _id
-    title
-  }
-}
-    `;
-export type ProgramUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables>;
-export type ProgramUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables>, 'mutation'>;
+        ProgramUpdateById(input: { title: $title }, id: $id) {
+            _id
+            title
+        }
+    }
+`;
+export type ProgramUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    ProgramUpdateByIdMutation,
+    ProgramUpdateByIdMutationVariables
+>;
+export type ProgramUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const ProgramUpdateByIdComponent = (props: ProgramUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables> mutation={ProgramUpdateByIdDocument} {...props} />
-    );
-    
-export type ProgramUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables> & TChildProps;
-export function withProgramUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ProgramUpdateByIdMutation,
-  ProgramUpdateByIdMutationVariables,
-  ProgramUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables, ProgramUpdateByIdProps<TChildProps>>(ProgramUpdateByIdDocument, {
-      alias: 'programUpdateById',
-      ...operationOptions
+export const ProgramUpdateByIdComponent = (
+    props: ProgramUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables
+    >
+        mutation={ProgramUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type ProgramUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    ProgramUpdateByIdMutation,
+    ProgramUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withProgramUpdateById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables,
+        ProgramUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables,
+        ProgramUpdateByIdProps<TChildProps>
+    >(ProgramUpdateByIdDocument, {
+        alias: 'programUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useProgramUpdateByIdMutation__
@@ -2049,45 +3282,87 @@ export function withProgramUpdateById<TProps, TChildProps = {}>(operationOptions
  *   },
  * });
  */
-export function useProgramUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables>(ProgramUpdateByIdDocument, baseOptions);
-      }
-export type ProgramUpdateByIdMutationHookResult = ReturnType<typeof useProgramUpdateByIdMutation>;
-export type ProgramUpdateByIdMutationResult = ApolloReactCommon.MutationResult<ProgramUpdateByIdMutation>;
-export type ProgramUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<ProgramUpdateByIdMutation, ProgramUpdateByIdMutationVariables>;
+export function useProgramUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        ProgramUpdateByIdMutation,
+        ProgramUpdateByIdMutationVariables
+    >(ProgramUpdateByIdDocument, baseOptions);
+}
+export type ProgramUpdateByIdMutationHookResult = ReturnType<
+    typeof useProgramUpdateByIdMutation
+>;
+export type ProgramUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    ProgramUpdateByIdMutation
+>;
+export type ProgramUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    ProgramUpdateByIdMutation,
+    ProgramUpdateByIdMutationVariables
+>;
 export const UserByIdDocument = gql`
     query UserById($id: ObjectId!) {
-  UserById(id: $id) {
-    _id
-    firstName
-    lastName
-    email
-  }
-}
-    `;
-export type UserByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<UserByIdQuery, UserByIdQueryVariables>, 'query'> & ({ variables: UserByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const UserByIdComponent = (props: UserByIdComponentProps) => (
-      <ApolloReactComponents.Query<UserByIdQuery, UserByIdQueryVariables> query={UserByIdDocument} {...props} />
+        UserById(id: $id) {
+            _id
+            firstName
+            lastName
+            email
+        }
+    }
+`;
+export type UserByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | { variables: UserByIdQueryVariables; skip?: boolean }
+        | { skip: boolean }
     );
-    
-export type UserByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<UserByIdQuery, UserByIdQueryVariables> & TChildProps;
-export function withUserById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  UserByIdQuery,
-  UserByIdQueryVariables,
-  UserByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, UserByIdQuery, UserByIdQueryVariables, UserByIdProps<TChildProps>>(UserByIdDocument, {
-      alias: 'userById',
-      ...operationOptions
+
+export const UserByIdComponent = (props: UserByIdComponentProps) => (
+    <ApolloReactComponents.Query<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >
+        query={UserByIdDocument}
+        {...props}
+    />
+);
+
+export type UserByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<UserByIdQuery, UserByIdQueryVariables> &
+    TChildProps;
+export function withUserById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        UserByIdQuery,
+        UserByIdQueryVariables,
+        UserByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        UserByIdQuery,
+        UserByIdQueryVariables,
+        UserByIdProps<TChildProps>
+    >(UserByIdDocument, {
+        alias: 'userById',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useUserByIdQuery__
  *
  * To run a query within a React component, call `useUserByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useUserByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useUserByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
@@ -2099,47 +3374,111 @@ export function withUserById<TProps, TChildProps = {}>(operationOptions?: Apollo
  *   },
  * });
  */
-export function useUserByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<UserByIdQuery, UserByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<UserByIdQuery, UserByIdQueryVariables>(UserByIdDocument, baseOptions);
-      }
-export function useUserByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<UserByIdQuery, UserByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<UserByIdQuery, UserByIdQueryVariables>(UserByIdDocument, baseOptions);
-        }
-export type UserByIdQueryHookResult = ReturnType<typeof useUserByIdQuery>;
-export type UserByIdLazyQueryHookResult = ReturnType<typeof useUserByIdLazyQuery>;
-export type UserByIdQueryResult = ApolloReactCommon.QueryResult<UserByIdQuery, UserByIdQueryVariables>;
-export const UserUpdateMyProfileDocument = gql`
-    mutation UserUpdateMyProfile($firstName: String!, $lastName: String!, $email: String!) {
-  UserUpdateMyProfile(input: {firstName: $firstName, lastName: $lastName, email: $email}) {
-    user {
-      _id
-      firstName
-      lastName
-      email
-      lastLoggedIn
-    }
-    token
-  }
+export function useUserByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >(UserByIdDocument, baseOptions);
 }
-    `;
-export type UserUpdateMyProfileMutationFn = ApolloReactCommon.MutationFunction<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>;
-export type UserUpdateMyProfileComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>, 'mutation'>;
+export function useUserByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        UserByIdQuery,
+        UserByIdQueryVariables
+    >(UserByIdDocument, baseOptions);
+}
+export type UserByIdQueryHookResult = ReturnType<
+    typeof useUserByIdQuery
+>;
+export type UserByIdLazyQueryHookResult = ReturnType<
+    typeof useUserByIdLazyQuery
+>;
+export type UserByIdQueryResult = ApolloReactCommon.QueryResult<
+    UserByIdQuery,
+    UserByIdQueryVariables
+>;
+export const UserUpdateMyProfileDocument = gql`
+    mutation UserUpdateMyProfile(
+        $firstName: String!
+        $lastName: String!
+        $email: String!
+    ) {
+        UserUpdateMyProfile(
+            input: {
+                firstName: $firstName
+                lastName: $lastName
+                email: $email
+            }
+        ) {
+            user {
+                _id
+                firstName
+                lastName
+                email
+                lastLoggedIn
+            }
+            token
+        }
+    }
+`;
+export type UserUpdateMyProfileMutationFn = ApolloReactCommon.MutationFunction<
+    UserUpdateMyProfileMutation,
+    UserUpdateMyProfileMutationVariables
+>;
+export type UserUpdateMyProfileComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const UserUpdateMyProfileComponent = (props: UserUpdateMyProfileComponentProps) => (
-      <ApolloReactComponents.Mutation<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables> mutation={UserUpdateMyProfileDocument} {...props} />
-    );
-    
-export type UserUpdateMyProfileProps<TChildProps = {}> = ApolloReactHoc.MutateProps<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables> & TChildProps;
-export function withUserUpdateMyProfile<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  UserUpdateMyProfileMutation,
-  UserUpdateMyProfileMutationVariables,
-  UserUpdateMyProfileProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables, UserUpdateMyProfileProps<TChildProps>>(UserUpdateMyProfileDocument, {
-      alias: 'userUpdateMyProfile',
-      ...operationOptions
+export const UserUpdateMyProfileComponent = (
+    props: UserUpdateMyProfileComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables
+    >
+        mutation={UserUpdateMyProfileDocument}
+        {...props}
+    />
+);
+
+export type UserUpdateMyProfileProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    UserUpdateMyProfileMutation,
+    UserUpdateMyProfileMutationVariables
+> &
+    TChildProps;
+export function withUserUpdateMyProfile<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables,
+        UserUpdateMyProfileProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables,
+        UserUpdateMyProfileProps<TChildProps>
+    >(UserUpdateMyProfileDocument, {
+        alias: 'userUpdateMyProfile',
+        ...operationOptions,
     });
-};
+}
 
 /**
  * __useUserUpdateMyProfileMutation__
@@ -2160,264 +3499,529 @@ export function withUserUpdateMyProfile<TProps, TChildProps = {}>(operationOptio
  *   },
  * });
  */
-export function useUserUpdateMyProfileMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>) {
-        return ApolloReactHooks.useMutation<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>(UserUpdateMyProfileDocument, baseOptions);
-      }
-export type UserUpdateMyProfileMutationHookResult = ReturnType<typeof useUserUpdateMyProfileMutation>;
-export type UserUpdateMyProfileMutationResult = ApolloReactCommon.MutationResult<UserUpdateMyProfileMutation>;
-export type UserUpdateMyProfileMutationOptions = ApolloReactCommon.BaseMutationOptions<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>;
-export const WidgetByIdDocument = gql`
-    query WidgetById($id: ObjectId!) {
-  WidgetById(id: $id) {
-    _id
-    title
-    date
-  }
+export function useUserUpdateMyProfileMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        UserUpdateMyProfileMutation,
+        UserUpdateMyProfileMutationVariables
+    >(UserUpdateMyProfileDocument, baseOptions);
 }
-    `;
-export type WidgetByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<WidgetByIdQuery, WidgetByIdQueryVariables>, 'query'> & ({ variables: WidgetByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
-
-    export const WidgetByIdComponent = (props: WidgetByIdComponentProps) => (
-      <ApolloReactComponents.Query<WidgetByIdQuery, WidgetByIdQueryVariables> query={WidgetByIdDocument} {...props} />
-    );
-    
-export type WidgetByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<WidgetByIdQuery, WidgetByIdQueryVariables> & TChildProps;
-export function withWidgetById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  WidgetByIdQuery,
-  WidgetByIdQueryVariables,
-  WidgetByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, WidgetByIdQuery, WidgetByIdQueryVariables, WidgetByIdProps<TChildProps>>(WidgetByIdDocument, {
-      alias: 'widgetById',
-      ...operationOptions
-    });
-};
-
-/**
- * __useWidgetByIdQuery__
- *
- * To run a query within a React component, call `useWidgetByIdQuery` and pass it any options that fit your needs.
- * When your component renders, `useWidgetByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useWidgetByIdQuery({
- *   variables: {
- *      id: // value for 'id'
- *   },
- * });
- */
-export function useWidgetByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<WidgetByIdQuery, WidgetByIdQueryVariables>) {
-        return ApolloReactHooks.useQuery<WidgetByIdQuery, WidgetByIdQueryVariables>(WidgetByIdDocument, baseOptions);
-      }
-export function useWidgetByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<WidgetByIdQuery, WidgetByIdQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<WidgetByIdQuery, WidgetByIdQueryVariables>(WidgetByIdDocument, baseOptions);
+export type UserUpdateMyProfileMutationHookResult = ReturnType<
+    typeof useUserUpdateMyProfileMutation
+>;
+export type UserUpdateMyProfileMutationResult = ApolloReactCommon.MutationResult<
+    UserUpdateMyProfileMutation
+>;
+export type UserUpdateMyProfileMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    UserUpdateMyProfileMutation,
+    UserUpdateMyProfileMutationVariables
+>;
+export const SpendPlanDraftByIdDocument = gql`
+    query SpendPlanDraftById($id: ObjectId!) {
+        SpendPlanDraftById(id: $id) {
+            _id
+            title
+            date
         }
-export type WidgetByIdQueryHookResult = ReturnType<typeof useWidgetByIdQuery>;
-export type WidgetByIdLazyQueryHookResult = ReturnType<typeof useWidgetByIdLazyQuery>;
-export type WidgetByIdQueryResult = ApolloReactCommon.QueryResult<WidgetByIdQuery, WidgetByIdQueryVariables>;
-export const WidgetManyDocument = gql`
-    query WidgetMany {
-  WidgetMany {
-    _id
-    title
-    date
-    updatedAt
-    updatedBy {
-      _id
-      firstName
-      lastName
     }
-  }
-}
-    `;
-export type WidgetManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<WidgetManyQuery, WidgetManyQueryVariables>, 'query'>;
-
-    export const WidgetManyComponent = (props: WidgetManyComponentProps) => (
-      <ApolloReactComponents.Query<WidgetManyQuery, WidgetManyQueryVariables> query={WidgetManyDocument} {...props} />
+`;
+export type SpendPlanDraftByIdComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >,
+    'query'
+> &
+    (
+        | {
+              variables: SpendPlanDraftByIdQueryVariables;
+              skip?: boolean;
+          }
+        | { skip: boolean }
     );
-    
-export type WidgetManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<WidgetManyQuery, WidgetManyQueryVariables> & TChildProps;
-export function withWidgetMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  WidgetManyQuery,
-  WidgetManyQueryVariables,
-  WidgetManyProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, WidgetManyQuery, WidgetManyQueryVariables, WidgetManyProps<TChildProps>>(WidgetManyDocument, {
-      alias: 'widgetMany',
-      ...operationOptions
+
+export const SpendPlanDraftByIdComponent = (
+    props: SpendPlanDraftByIdComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >
+        query={SpendPlanDraftByIdDocument}
+        {...props}
+    />
+);
+
+export type SpendPlanDraftByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    SpendPlanDraftByIdQuery,
+    SpendPlanDraftByIdQueryVariables
+> &
+    TChildProps;
+export function withSpendPlanDraftById<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables,
+        SpendPlanDraftByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables,
+        SpendPlanDraftByIdProps<TChildProps>
+    >(SpendPlanDraftByIdDocument, {
+        alias: 'widgetById',
+        ...operationOptions,
     });
-};
+}
 
 /**
- * __useWidgetManyQuery__
+ * __useSpendPlanDraftByIdQuery__
  *
- * To run a query within a React component, call `useWidgetManyQuery` and pass it any options that fit your needs.
- * When your component renders, `useWidgetManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * To run a query within a React component, call `useSpendPlanDraftByIdQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSpendPlanDraftByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useWidgetManyQuery({
+ * const { data, loading, error } = useSpendPlanDraftByIdQuery({
  *   variables: {
+ *      id: // value for 'id'
  *   },
  * });
  */
-export function useWidgetManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<WidgetManyQuery, WidgetManyQueryVariables>) {
-        return ApolloReactHooks.useQuery<WidgetManyQuery, WidgetManyQueryVariables>(WidgetManyDocument, baseOptions);
-      }
-export function useWidgetManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<WidgetManyQuery, WidgetManyQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<WidgetManyQuery, WidgetManyQueryVariables>(WidgetManyDocument, baseOptions);
+export function useSpendPlanDraftByIdQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >(SpendPlanDraftByIdDocument, baseOptions);
+}
+export function useSpendPlanDraftByIdLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        SpendPlanDraftByIdQuery,
+        SpendPlanDraftByIdQueryVariables
+    >(SpendPlanDraftByIdDocument, baseOptions);
+}
+export type SpendPlanDraftByIdQueryHookResult = ReturnType<
+    typeof useSpendPlanDraftByIdQuery
+>;
+export type SpendPlanDraftByIdLazyQueryHookResult = ReturnType<
+    typeof useSpendPlanDraftByIdLazyQuery
+>;
+export type SpendPlanDraftByIdQueryResult = ApolloReactCommon.QueryResult<
+    SpendPlanDraftByIdQuery,
+    SpendPlanDraftByIdQueryVariables
+>;
+export const SpendPlanDraftManyDocument = gql`
+    query SpendPlanDraftMany {
+        SpendPlanDraftMany {
+            _id
+            title
+            date
+            updatedAt
+            updatedBy {
+                _id
+                firstName
+                lastName
+            }
         }
-export type WidgetManyQueryHookResult = ReturnType<typeof useWidgetManyQuery>;
-export type WidgetManyLazyQueryHookResult = ReturnType<typeof useWidgetManyLazyQuery>;
-export type WidgetManyQueryResult = ApolloReactCommon.QueryResult<WidgetManyQuery, WidgetManyQueryVariables>;
-export const WidgetCreateOneDocument = gql`
-    mutation WidgetCreateOne($title: String!, $date: DateTime!) {
-  WidgetCreateOne(input: {title: $title, date: $date}) {
-    _id
-    title
-    date
-  }
-}
-    `;
-export type WidgetCreateOneMutationFn = ApolloReactCommon.MutationFunction<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>;
-export type WidgetCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>, 'mutation'>;
+    }
+`;
+export type SpendPlanDraftManyComponentProps = Omit<
+    ApolloReactComponents.QueryComponentOptions<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >,
+    'query'
+>;
 
-    export const WidgetCreateOneComponent = (props: WidgetCreateOneComponentProps) => (
-      <ApolloReactComponents.Mutation<WidgetCreateOneMutation, WidgetCreateOneMutationVariables> mutation={WidgetCreateOneDocument} {...props} />
-    );
-    
-export type WidgetCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetCreateOneMutation, WidgetCreateOneMutationVariables> & TChildProps;
-export function withWidgetCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  WidgetCreateOneMutation,
-  WidgetCreateOneMutationVariables,
-  WidgetCreateOneProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, WidgetCreateOneMutation, WidgetCreateOneMutationVariables, WidgetCreateOneProps<TChildProps>>(WidgetCreateOneDocument, {
-      alias: 'widgetCreateOne',
-      ...operationOptions
+export const SpendPlanDraftManyComponent = (
+    props: SpendPlanDraftManyComponentProps,
+) => (
+    <ApolloReactComponents.Query<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >
+        query={SpendPlanDraftManyDocument}
+        {...props}
+    />
+);
+
+export type SpendPlanDraftManyProps<
+    TChildProps = {}
+> = ApolloReactHoc.DataProps<
+    SpendPlanDraftManyQuery,
+    SpendPlanDraftManyQueryVariables
+> &
+    TChildProps;
+export function withSpendPlanDraftMany<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables,
+        SpendPlanDraftManyProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withQuery<
+        TProps,
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables,
+        SpendPlanDraftManyProps<TChildProps>
+    >(SpendPlanDraftManyDocument, {
+        alias: 'widgetMany',
+        ...operationOptions,
     });
-};
+}
 
 /**
- * __useWidgetCreateOneMutation__
+ * __useSpendPlanDraftManyQuery__
  *
- * To run a mutation, you first call `useWidgetCreateOneMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useWidgetCreateOneMutation` returns a tuple that includes:
+ * To run a query within a React component, call `useSpendPlanDraftManyQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSpendPlanDraftManyQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSpendPlanDraftManyQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSpendPlanDraftManyQuery(
+    baseOptions?: ApolloReactHooks.QueryHookOptions<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useQuery<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >(SpendPlanDraftManyDocument, baseOptions);
+}
+export function useSpendPlanDraftManyLazyQuery(
+    baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >,
+) {
+    return ApolloReactHooks.useLazyQuery<
+        SpendPlanDraftManyQuery,
+        SpendPlanDraftManyQueryVariables
+    >(SpendPlanDraftManyDocument, baseOptions);
+}
+export type SpendPlanDraftManyQueryHookResult = ReturnType<
+    typeof useSpendPlanDraftManyQuery
+>;
+export type SpendPlanDraftManyLazyQueryHookResult = ReturnType<
+    typeof useSpendPlanDraftManyLazyQuery
+>;
+export type SpendPlanDraftManyQueryResult = ApolloReactCommon.QueryResult<
+    SpendPlanDraftManyQuery,
+    SpendPlanDraftManyQueryVariables
+>;
+export const SpendPlanDraftCreateOneDocument = gql`
+    mutation SpendPlanDraftCreateOne(
+        $title: String!
+        $date: DateTime!
+    ) {
+        SpendPlanDraftCreateOne(
+            input: { title: $title, date: $date }
+        ) {
+            _id
+            title
+            date
+        }
+    }
+`;
+export type SpendPlanDraftCreateOneMutationFn = ApolloReactCommon.MutationFunction<
+    SpendPlanDraftCreateOneMutation,
+    SpendPlanDraftCreateOneMutationVariables
+>;
+export type SpendPlanDraftCreateOneComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables
+    >,
+    'mutation'
+>;
+
+export const SpendPlanDraftCreateOneComponent = (
+    props: SpendPlanDraftCreateOneComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables
+    >
+        mutation={SpendPlanDraftCreateOneDocument}
+        {...props}
+    />
+);
+
+export type SpendPlanDraftCreateOneProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    SpendPlanDraftCreateOneMutation,
+    SpendPlanDraftCreateOneMutationVariables
+> &
+    TChildProps;
+export function withSpendPlanDraftCreateOne<TProps, TChildProps = {}>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables,
+        SpendPlanDraftCreateOneProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables,
+        SpendPlanDraftCreateOneProps<TChildProps>
+    >(SpendPlanDraftCreateOneDocument, {
+        alias: 'widgetCreateOne',
+        ...operationOptions,
+    });
+}
+
+/**
+ * __useSpendPlanDraftCreateOneMutation__
+ *
+ * To run a mutation, you first call `useSpendPlanDraftCreateOneMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSpendPlanDraftCreateOneMutation` returns a tuple that includes:
  * - A mutate function that you can call at any time to execute the mutation
  * - An object with fields that represent the current status of the mutation's execution
  *
  * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
  *
  * @example
- * const [widgetCreateOneMutation, { data, loading, error }] = useWidgetCreateOneMutation({
+ * const [widgetCreateOneMutation, { data, loading, error }] = useSpendPlanDraftCreateOneMutation({
  *   variables: {
  *      title: // value for 'title'
  *      date: // value for 'date'
  *   },
  * });
  */
-export function useWidgetCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>) {
-        return ApolloReactHooks.useMutation<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>(WidgetCreateOneDocument, baseOptions);
-      }
-export type WidgetCreateOneMutationHookResult = ReturnType<typeof useWidgetCreateOneMutation>;
-export type WidgetCreateOneMutationResult = ApolloReactCommon.MutationResult<WidgetCreateOneMutation>;
-export type WidgetCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>;
-export const WidgetRemoveByIdDocument = gql`
-    mutation WidgetRemoveById($id: ObjectId!) {
-  WidgetRemoveById(id: $id) {
-    _id
-    title
-    date
-  }
+export function useSpendPlanDraftCreateOneMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        SpendPlanDraftCreateOneMutation,
+        SpendPlanDraftCreateOneMutationVariables
+    >(SpendPlanDraftCreateOneDocument, baseOptions);
 }
-    `;
-export type WidgetRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>;
-export type WidgetRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>, 'mutation'>;
+export type SpendPlanDraftCreateOneMutationHookResult = ReturnType<
+    typeof useSpendPlanDraftCreateOneMutation
+>;
+export type SpendPlanDraftCreateOneMutationResult = ApolloReactCommon.MutationResult<
+    SpendPlanDraftCreateOneMutation
+>;
+export type SpendPlanDraftCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    SpendPlanDraftCreateOneMutation,
+    SpendPlanDraftCreateOneMutationVariables
+>;
+export const SpendPlanDraftRemoveByIdDocument = gql`
+    mutation SpendPlanDraftRemoveById($id: ObjectId!) {
+        SpendPlanDraftRemoveById(id: $id) {
+            _id
+            title
+            date
+        }
+    }
+`;
+export type SpendPlanDraftRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<
+    SpendPlanDraftRemoveByIdMutation,
+    SpendPlanDraftRemoveByIdMutationVariables
+>;
+export type SpendPlanDraftRemoveByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const WidgetRemoveByIdComponent = (props: WidgetRemoveByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables> mutation={WidgetRemoveByIdDocument} {...props} />
-    );
-    
-export type WidgetRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables> & TChildProps;
-export function withWidgetRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  WidgetRemoveByIdMutation,
-  WidgetRemoveByIdMutationVariables,
-  WidgetRemoveByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables, WidgetRemoveByIdProps<TChildProps>>(WidgetRemoveByIdDocument, {
-      alias: 'widgetRemoveById',
-      ...operationOptions
+export const SpendPlanDraftRemoveByIdComponent = (
+    props: SpendPlanDraftRemoveByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables
+    >
+        mutation={SpendPlanDraftRemoveByIdDocument}
+        {...props}
+    />
+);
+
+export type SpendPlanDraftRemoveByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    SpendPlanDraftRemoveByIdMutation,
+    SpendPlanDraftRemoveByIdMutationVariables
+> &
+    TChildProps;
+export function withSpendPlanDraftRemoveById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables,
+        SpendPlanDraftRemoveByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables,
+        SpendPlanDraftRemoveByIdProps<TChildProps>
+    >(SpendPlanDraftRemoveByIdDocument, {
+        alias: 'widgetRemoveById',
+        ...operationOptions,
     });
-};
+}
 
 /**
- * __useWidgetRemoveByIdMutation__
+ * __useSpendPlanDraftRemoveByIdMutation__
  *
- * To run a mutation, you first call `useWidgetRemoveByIdMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useWidgetRemoveByIdMutation` returns a tuple that includes:
+ * To run a mutation, you first call `useSpendPlanDraftRemoveByIdMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSpendPlanDraftRemoveByIdMutation` returns a tuple that includes:
  * - A mutate function that you can call at any time to execute the mutation
  * - An object with fields that represent the current status of the mutation's execution
  *
  * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
  *
  * @example
- * const [widgetRemoveByIdMutation, { data, loading, error }] = useWidgetRemoveByIdMutation({
+ * const [widgetRemoveByIdMutation, { data, loading, error }] = useSpendPlanDraftRemoveByIdMutation({
  *   variables: {
  *      id: // value for 'id'
  *   },
  * });
  */
-export function useWidgetRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>(WidgetRemoveByIdDocument, baseOptions);
-      }
-export type WidgetRemoveByIdMutationHookResult = ReturnType<typeof useWidgetRemoveByIdMutation>;
-export type WidgetRemoveByIdMutationResult = ApolloReactCommon.MutationResult<WidgetRemoveByIdMutation>;
-export type WidgetRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>;
-export const WidgetUpdateByIdDocument = gql`
-    mutation WidgetUpdateById($id: ObjectId!, $title: String!, $date: DateTime!) {
-  WidgetUpdateById(input: {title: $title, date: $date}, id: $id) {
-    _id
-    title
-    date
-  }
+export function useSpendPlanDraftRemoveByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        SpendPlanDraftRemoveByIdMutation,
+        SpendPlanDraftRemoveByIdMutationVariables
+    >(SpendPlanDraftRemoveByIdDocument, baseOptions);
 }
-    `;
-export type WidgetUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>;
-export type WidgetUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>, 'mutation'>;
+export type SpendPlanDraftRemoveByIdMutationHookResult = ReturnType<
+    typeof useSpendPlanDraftRemoveByIdMutation
+>;
+export type SpendPlanDraftRemoveByIdMutationResult = ApolloReactCommon.MutationResult<
+    SpendPlanDraftRemoveByIdMutation
+>;
+export type SpendPlanDraftRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    SpendPlanDraftRemoveByIdMutation,
+    SpendPlanDraftRemoveByIdMutationVariables
+>;
+export const SpendPlanDraftUpdateByIdDocument = gql`
+    mutation SpendPlanDraftUpdateById(
+        $id: ObjectId!
+        $title: String!
+        $date: DateTime!
+    ) {
+        SpendPlanDraftUpdateById(
+            input: { title: $title, date: $date }
+            id: $id
+        ) {
+            _id
+            title
+            date
+        }
+    }
+`;
+export type SpendPlanDraftUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<
+    SpendPlanDraftUpdateByIdMutation,
+    SpendPlanDraftUpdateByIdMutationVariables
+>;
+export type SpendPlanDraftUpdateByIdComponentProps = Omit<
+    ApolloReactComponents.MutationComponentOptions<
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables
+    >,
+    'mutation'
+>;
 
-    export const WidgetUpdateByIdComponent = (props: WidgetUpdateByIdComponentProps) => (
-      <ApolloReactComponents.Mutation<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables> mutation={WidgetUpdateByIdDocument} {...props} />
-    );
-    
-export type WidgetUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables> & TChildProps;
-export function withWidgetUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  WidgetUpdateByIdMutation,
-  WidgetUpdateByIdMutationVariables,
-  WidgetUpdateByIdProps<TChildProps>>) {
-    return ApolloReactHoc.withMutation<TProps, WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables, WidgetUpdateByIdProps<TChildProps>>(WidgetUpdateByIdDocument, {
-      alias: 'widgetUpdateById',
-      ...operationOptions
+export const SpendPlanDraftUpdateByIdComponent = (
+    props: SpendPlanDraftUpdateByIdComponentProps,
+) => (
+    <ApolloReactComponents.Mutation<
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables
+    >
+        mutation={SpendPlanDraftUpdateByIdDocument}
+        {...props}
+    />
+);
+
+export type SpendPlanDraftUpdateByIdProps<
+    TChildProps = {}
+> = ApolloReactHoc.MutateProps<
+    SpendPlanDraftUpdateByIdMutation,
+    SpendPlanDraftUpdateByIdMutationVariables
+> &
+    TChildProps;
+export function withSpendPlanDraftUpdateById<
+    TProps,
+    TChildProps = {}
+>(
+    operationOptions?: ApolloReactHoc.OperationOption<
+        TProps,
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables,
+        SpendPlanDraftUpdateByIdProps<TChildProps>
+    >,
+) {
+    return ApolloReactHoc.withMutation<
+        TProps,
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables,
+        SpendPlanDraftUpdateByIdProps<TChildProps>
+    >(SpendPlanDraftUpdateByIdDocument, {
+        alias: 'widgetUpdateById',
+        ...operationOptions,
     });
-};
+}
 
 /**
- * __useWidgetUpdateByIdMutation__
+ * __useSpendPlanDraftUpdateByIdMutation__
  *
- * To run a mutation, you first call `useWidgetUpdateByIdMutation` within a React component and pass it any options that fit your needs.
- * When your component renders, `useWidgetUpdateByIdMutation` returns a tuple that includes:
+ * To run a mutation, you first call `useSpendPlanDraftUpdateByIdMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSpendPlanDraftUpdateByIdMutation` returns a tuple that includes:
  * - A mutate function that you can call at any time to execute the mutation
  * - An object with fields that represent the current status of the mutation's execution
  *
  * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
  *
  * @example
- * const [widgetUpdateByIdMutation, { data, loading, error }] = useWidgetUpdateByIdMutation({
+ * const [widgetUpdateByIdMutation, { data, loading, error }] = useSpendPlanDraftUpdateByIdMutation({
  *   variables: {
  *      id: // value for 'id'
  *      title: // value for 'title'
@@ -2425,9 +4029,24 @@ export function withWidgetUpdateById<TProps, TChildProps = {}>(operationOptions?
  *   },
  * });
  */
-export function useWidgetUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>) {
-        return ApolloReactHooks.useMutation<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>(WidgetUpdateByIdDocument, baseOptions);
-      }
-export type WidgetUpdateByIdMutationHookResult = ReturnType<typeof useWidgetUpdateByIdMutation>;
-export type WidgetUpdateByIdMutationResult = ApolloReactCommon.MutationResult<WidgetUpdateByIdMutation>;
-export type WidgetUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>;
+export function useSpendPlanDraftUpdateByIdMutation(
+    baseOptions?: ApolloReactHooks.MutationHookOptions<
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables
+    >,
+) {
+    return ApolloReactHooks.useMutation<
+        SpendPlanDraftUpdateByIdMutation,
+        SpendPlanDraftUpdateByIdMutationVariables
+    >(SpendPlanDraftUpdateByIdDocument, baseOptions);
+}
+export type SpendPlanDraftUpdateByIdMutationHookResult = ReturnType<
+    typeof useSpendPlanDraftUpdateByIdMutation
+>;
+export type SpendPlanDraftUpdateByIdMutationResult = ApolloReactCommon.MutationResult<
+    SpendPlanDraftUpdateByIdMutation
+>;
+export type SpendPlanDraftUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<
+    SpendPlanDraftUpdateByIdMutation,
+    SpendPlanDraftUpdateByIdMutationVariables
+>;

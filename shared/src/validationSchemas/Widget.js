@@ -11,15 +11,15 @@ const defaultSchema = Yup.object().shape({
 });
 
 module.exports = {
-    Widget: {
+    SpendPlanDraft: {
         yupSchemas: {
             defaultSchema,
         },
         graphqlMutations: {
-            WidgetCreateOne: generateValidatorForSingleRecord(
+            SpendPlanDraftCreateOne: generateValidatorForSingleRecord(
                 defaultSchema,
             ),
-            WidgetUpdateById: generateValidatorForSingleRecord(
+            SpendPlanDraftUpdateById: generateValidatorForSingleRecord(
                 defaultSchema,
             ),
         },

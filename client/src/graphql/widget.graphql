@@ -1,13 +1,13 @@
-query WidgetById($id: ObjectId!) {
-    WidgetById(id: $id) {
+query SpendPlanDraftById($id: ObjectId!) {
+    SpendPlanDraftById(id: $id) {
         _id
         title
         date
     }
 }
 
-query WidgetMany {
-    WidgetMany {
+query SpendPlanDraftMany {
+    SpendPlanDraftMany {
         _id
         title
         date
@@ -20,28 +20,31 @@ query WidgetMany {
     }
 }
 
-mutation WidgetCreateOne($title: String!, $date: DateTime!) {
-    WidgetCreateOne(input: { title: $title, date: $date }) {
+mutation SpendPlanDraftCreateOne($title: String!, $date: DateTime!) {
+    SpendPlanDraftCreateOne(input: { title: $title, date: $date }) {
         _id
         title
         date
     }
 }
 
-mutation WidgetRemoveById($id: ObjectId!) {
-    WidgetRemoveById(id: $id) {
+mutation SpendPlanDraftRemoveById($id: ObjectId!) {
+    SpendPlanDraftRemoveById(id: $id) {
         _id
         title
         date
     }
 }
 
-mutation WidgetUpdateById(
+mutation SpendPlanDraftUpdateById(
     $id: ObjectId!
     $title: String!
     $date: DateTime!
 ) {
-    WidgetUpdateById(input: { title: $title, date: $date }, id: $id) {
+    SpendPlanDraftUpdateById(
+        input: { title: $title, date: $date }
+        id: $id
+    ) {
         _id
         title
         date
