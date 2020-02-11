@@ -14,7 +14,7 @@ export class Widget extends Typegoose {
     @Property({ required: true })
     title: string;
 
-    @Field()
+    @Field({ nullable: true })
     @Property({ required: false })
     date: Date;
 
