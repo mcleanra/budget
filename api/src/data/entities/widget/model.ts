@@ -14,6 +14,10 @@ export class Widget extends Typegoose {
     @Property({ required: true })
     title: string;
 
+    @Field()
+    @Property({ required: false })
+    date: Date;
+
     @Property({ default: () => Date.now() })
     @Field()
     createdAt: Date;
@@ -39,4 +43,7 @@ export const WidgetModel = new Widget().getModelForClass(Widget, {
 export class WidgetInput implements Partial<Widget> {
     @Field()
     title: string;
+
+    @Field()
+    date: Date;
 }
