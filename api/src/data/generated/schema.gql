@@ -89,6 +89,9 @@ type Mutation {
   ProgramUpdateById(input: ProgramInput!, id: ObjectId!): Program
   ProgramRemoveById(id: ObjectId!): Program
   UserUpdateMyProfile(input: UserInput!): UpdateMyProfileResult
+  WidgetCreateOne(input: WidgetInput!): Widget!
+  WidgetUpdateById(input: WidgetInput!, id: ObjectId!): Widget
+  WidgetRemoveById(id: ObjectId!): Widget
 }
 
 """Mongo object id scalar type"""
@@ -119,6 +122,8 @@ type Query {
   ProgramById(id: ObjectId!): Program
   ProgramMany: [Program!]!
   UserById(id: ObjectId!): User
+  WidgetById(id: ObjectId!): Widget
+  WidgetMany: [Widget!]!
 }
 
 type UpdateMyProfileResult {
@@ -143,4 +148,17 @@ input UserInput {
   firstName: String!
   lastName: String!
   email: String!
+}
+
+type Widget {
+  _id: ObjectId!
+  title: String!
+  createdAt: DateTime!
+  createdBy: User!
+  updatedAt: DateTime!
+  updatedBy: User!
+}
+
+input WidgetInput {
+  title: String!
 }
