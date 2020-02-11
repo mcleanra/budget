@@ -153,6 +153,7 @@ input UserInput {
 type Widget {
   _id: ObjectId!
   title: String!
+  date: DateTime!
   createdAt: DateTime!
   createdBy: User!
   updatedAt: DateTime!
@@ -161,4 +162,5 @@ type Widget {
 
 input WidgetInput {
   title: String!
+  date: DateTime!
 }
