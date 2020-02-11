@@ -4,9 +4,10 @@ const modelNames = [
     'ExpenditureType',
     'MfpIndicator',
     'Program',
-    'User'
+    'User',
+    'Widget',
 ];
 
 module.exports = {
-    modelNames
-}
+    modelNames,
+};
