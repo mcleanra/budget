@@ -1,0 +1,49 @@
+query WidgetById($id: ObjectId!) {
+    WidgetById(id: $id) {
+        _id
+        title
+        date
+    }
+}
+
+query WidgetMany {
+    WidgetMany {
+        _id
+        title
+        date
+        updatedAt
+        updatedBy {
+            _id
+            firstName
+            lastName
+        }
+    }
+}
+
+mutation WidgetCreateOne($title: String!, $date: DateTime!) {
+    WidgetCreateOne(input: { title: $title, date: $date }) {
+        _id
+        title
+        date
+    }
+}
+
+mutation WidgetRemoveById($id: ObjectId!) {
+    WidgetRemoveById(id: $id) {
+        _id
+        title
+        date
+    }
+}
+
+mutation WidgetUpdateById(
+    $id: ObjectId!
+    $title: String!
+    $date: DateTime!
+) {
+    WidgetUpdateById(input: { title: $title, date: $date }, id: $id) {
+        _id
+        title
+        date
+    }
+}

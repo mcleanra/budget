@@ -107,6 +107,9 @@ export type Mutation = {
   ProgramUpdateById?: Maybe<Program>,
   ProgramRemoveById?: Maybe<Program>,
   UserUpdateMyProfile?: Maybe<UpdateMyProfileResult>,
+  WidgetCreateOne: Widget,
+  WidgetUpdateById?: Maybe<Widget>,
+  WidgetRemoveById?: Maybe<Widget>,
 };
 
 
@@ -195,6 +198,22 @@ export type MutationUserUpdateMyProfileArgs = {
 };
 
 
+export type MutationWidgetCreateOneArgs = {
+  input: WidgetInput
+};
+
+
+export type MutationWidgetUpdateByIdArgs = {
+  input: WidgetInput,
+  id: Scalars['ObjectId']
+};
+
+
+export type MutationWidgetRemoveByIdArgs = {
+  id: Scalars['ObjectId']
+};
+
+
 export type Program = {
    __typename?: 'Program',
   _id: Scalars['ObjectId'],
@@ -222,6 +241,8 @@ export type Query = {
   ProgramById?: Maybe<Program>,
   ProgramMany: Array<Program>,
   UserById?: Maybe<User>,
+  WidgetById?: Maybe<Widget>,
+  WidgetMany: Array<Widget>,
 };
 
 
@@ -254,6 +275,11 @@ export type QueryUserByIdArgs = {
   id: Scalars['ObjectId']
 };
 
+
+export type QueryWidgetByIdArgs = {
+  id: Scalars['ObjectId']
+};
+
 export type UpdateMyProfileResult = {
    __typename?: 'UpdateMyProfileResult',
   user: User,
@@ -278,6 +304,22 @@ export type UserInput = {
   firstName: Scalars['String'],
   lastName: Scalars['String'],
   email: Scalars['String'],
+};
+
+export type Widget = {
+   __typename?: 'Widget',
+  _id: Scalars['ObjectId'],
+  title: Scalars['String'],
+  date: Scalars['DateTime'],
+  createdAt: Scalars['DateTime'],
+  createdBy: User,
+  updatedAt: Scalars['DateTime'],
+  updatedBy: User,
+};
+
+export type WidgetInput = {
+  title: Scalars['String'],
+  date: Scalars['DateTime'],
 };
 
 export type DirectorateByIdQueryVariables = {
@@ -649,6 +691,76 @@ export type UserUpdateMyProfileMutation = (
       { __typename?: 'User' }
       & Pick<User, '_id' | 'firstName' | 'lastName' | 'email' | 'lastLoggedIn'>
     ) }
+  )> }
+);
+
+export type WidgetByIdQueryVariables = {
+  id: Scalars['ObjectId']
+};
+
+
+export type WidgetByIdQuery = (
+  { __typename?: 'Query' }
+  & { WidgetById: Maybe<(
+    { __typename?: 'Widget' }
+    & Pick<Widget, '_id' | 'title' | 'date'>
+  )> }
+);
+
+export type WidgetManyQueryVariables = {};
+
+
+export type WidgetManyQuery = (
+  { __typename?: 'Query' }
+  & { WidgetMany: Array<(
+    { __typename?: 'Widget' }
+    & Pick<Widget, '_id' | 'title' | 'date' | 'updatedAt'>
+    & { updatedBy: (
+      { __typename?: 'User' }
+      & Pick<User, '_id' | 'firstName' | 'lastName'>
+    ) }
+  )> }
+);
+
+export type WidgetCreateOneMutationVariables = {
+  title: Scalars['String'],
+  date: Scalars['DateTime']
+};
+
+
+export type WidgetCreateOneMutation = (
+  { __typename?: 'Mutation' }
+  & { WidgetCreateOne: (
+    { __typename?: 'Widget' }
+    & Pick<Widget, '_id' | 'title' | 'date'>
+  ) }
+);
+
+export type WidgetRemoveByIdMutationVariables = {
+  id: Scalars['ObjectId']
+};
+
+
+export type WidgetRemoveByIdMutation = (
+  { __typename?: 'Mutation' }
+  & { WidgetRemoveById: Maybe<(
+    { __typename?: 'Widget' }
+    & Pick<Widget, '_id' | 'title' | 'date'>
+  )> }
+);
+
+export type WidgetUpdateByIdMutationVariables = {
+  id: Scalars['ObjectId'],
+  title: Scalars['String'],
+  date: Scalars['DateTime']
+};
+
+
+export type WidgetUpdateByIdMutation = (
+  { __typename?: 'Mutation' }
+  & { WidgetUpdateById: Maybe<(
+    { __typename?: 'Widget' }
+    & Pick<Widget, '_id' | 'title' | 'date'>
   )> }
 );
 
@@ -2054,3 +2166,268 @@ export function useUserUpdateMyProfileMutation(baseOptions?: ApolloReactHooks.Mu
 export type UserUpdateMyProfileMutationHookResult = ReturnType<typeof useUserUpdateMyProfileMutation>;
 export type UserUpdateMyProfileMutationResult = ApolloReactCommon.MutationResult<UserUpdateMyProfileMutation>;
 export type UserUpdateMyProfileMutationOptions = ApolloReactCommon.BaseMutationOptions<UserUpdateMyProfileMutation, UserUpdateMyProfileMutationVariables>;
+export const WidgetByIdDocument = gql`
+    query WidgetById($id: ObjectId!) {
+  WidgetById(id: $id) {
+    _id
+    title
+    date
+  }
+}
+    `;
+export type WidgetByIdComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<WidgetByIdQuery, WidgetByIdQueryVariables>, 'query'> & ({ variables: WidgetByIdQueryVariables; skip?: boolean; } | { skip: boolean; });
+
+    export const WidgetByIdComponent = (props: WidgetByIdComponentProps) => (
+      <ApolloReactComponents.Query<WidgetByIdQuery, WidgetByIdQueryVariables> query={WidgetByIdDocument} {...props} />
+    );
+    
+export type WidgetByIdProps<TChildProps = {}> = ApolloReactHoc.DataProps<WidgetByIdQuery, WidgetByIdQueryVariables> & TChildProps;
+export function withWidgetById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  WidgetByIdQuery,
+  WidgetByIdQueryVariables,
+  WidgetByIdProps<TChildProps>>) {
+    return ApolloReactHoc.withQuery<TProps, WidgetByIdQuery, WidgetByIdQueryVariables, WidgetByIdProps<TChildProps>>(WidgetByIdDocument, {
+      alias: 'widgetById',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useWidgetByIdQuery__
+ *
+ * To run a query within a React component, call `useWidgetByIdQuery` and pass it any options that fit your needs.
+ * When your component renders, `useWidgetByIdQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useWidgetByIdQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useWidgetByIdQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<WidgetByIdQuery, WidgetByIdQueryVariables>) {
+        return ApolloReactHooks.useQuery<WidgetByIdQuery, WidgetByIdQueryVariables>(WidgetByIdDocument, baseOptions);
+      }
+export function useWidgetByIdLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<WidgetByIdQuery, WidgetByIdQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<WidgetByIdQuery, WidgetByIdQueryVariables>(WidgetByIdDocument, baseOptions);
+        }
+export type WidgetByIdQueryHookResult = ReturnType<typeof useWidgetByIdQuery>;
+export type WidgetByIdLazyQueryHookResult = ReturnType<typeof useWidgetByIdLazyQuery>;
+export type WidgetByIdQueryResult = ApolloReactCommon.QueryResult<WidgetByIdQuery, WidgetByIdQueryVariables>;
+export const WidgetManyDocument = gql`
+    query WidgetMany {
+  WidgetMany {
+    _id
+    title
+    date
+    updatedAt
+    updatedBy {
+      _id
+      firstName
+      lastName
+    }
+  }
+}
+    `;
+export type WidgetManyComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<WidgetManyQuery, WidgetManyQueryVariables>, 'query'>;
+
+    export const WidgetManyComponent = (props: WidgetManyComponentProps) => (
+      <ApolloReactComponents.Query<WidgetManyQuery, WidgetManyQueryVariables> query={WidgetManyDocument} {...props} />
+    );
+    
+export type WidgetManyProps<TChildProps = {}> = ApolloReactHoc.DataProps<WidgetManyQuery, WidgetManyQueryVariables> & TChildProps;
+export function withWidgetMany<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  WidgetManyQuery,
+  WidgetManyQueryVariables,
+  WidgetManyProps<TChildProps>>) {
+    return ApolloReactHoc.withQuery<TProps, WidgetManyQuery, WidgetManyQueryVariables, WidgetManyProps<TChildProps>>(WidgetManyDocument, {
+      alias: 'widgetMany',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useWidgetManyQuery__
+ *
+ * To run a query within a React component, call `useWidgetManyQuery` and pass it any options that fit your needs.
+ * When your component renders, `useWidgetManyQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useWidgetManyQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useWidgetManyQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<WidgetManyQuery, WidgetManyQueryVariables>) {
+        return ApolloReactHooks.useQuery<WidgetManyQuery, WidgetManyQueryVariables>(WidgetManyDocument, baseOptions);
+      }
+export function useWidgetManyLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<WidgetManyQuery, WidgetManyQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<WidgetManyQuery, WidgetManyQueryVariables>(WidgetManyDocument, baseOptions);
+        }
+export type WidgetManyQueryHookResult = ReturnType<typeof useWidgetManyQuery>;
+export type WidgetManyLazyQueryHookResult = ReturnType<typeof useWidgetManyLazyQuery>;
+export type WidgetManyQueryResult = ApolloReactCommon.QueryResult<WidgetManyQuery, WidgetManyQueryVariables>;
+export const WidgetCreateOneDocument = gql`
+    mutation WidgetCreateOne($title: String!, $date: DateTime!) {
+  WidgetCreateOne(input: {title: $title, date: $date}) {
+    _id
+    title
+    date
+  }
+}
+    `;
+export type WidgetCreateOneMutationFn = ApolloReactCommon.MutationFunction<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>;
+export type WidgetCreateOneComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>, 'mutation'>;
+
+    export const WidgetCreateOneComponent = (props: WidgetCreateOneComponentProps) => (
+      <ApolloReactComponents.Mutation<WidgetCreateOneMutation, WidgetCreateOneMutationVariables> mutation={WidgetCreateOneDocument} {...props} />
+    );
+    
+export type WidgetCreateOneProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetCreateOneMutation, WidgetCreateOneMutationVariables> & TChildProps;
+export function withWidgetCreateOne<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  WidgetCreateOneMutation,
+  WidgetCreateOneMutationVariables,
+  WidgetCreateOneProps<TChildProps>>) {
+    return ApolloReactHoc.withMutation<TProps, WidgetCreateOneMutation, WidgetCreateOneMutationVariables, WidgetCreateOneProps<TChildProps>>(WidgetCreateOneDocument, {
+      alias: 'widgetCreateOne',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useWidgetCreateOneMutation__
+ *
+ * To run a mutation, you first call `useWidgetCreateOneMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useWidgetCreateOneMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [widgetCreateOneMutation, { data, loading, error }] = useWidgetCreateOneMutation({
+ *   variables: {
+ *      title: // value for 'title'
+ *      date: // value for 'date'
+ *   },
+ * });
+ */
+export function useWidgetCreateOneMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>) {
+        return ApolloReactHooks.useMutation<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>(WidgetCreateOneDocument, baseOptions);
+      }
+export type WidgetCreateOneMutationHookResult = ReturnType<typeof useWidgetCreateOneMutation>;
+export type WidgetCreateOneMutationResult = ApolloReactCommon.MutationResult<WidgetCreateOneMutation>;
+export type WidgetCreateOneMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetCreateOneMutation, WidgetCreateOneMutationVariables>;
+export const WidgetRemoveByIdDocument = gql`
+    mutation WidgetRemoveById($id: ObjectId!) {
+  WidgetRemoveById(id: $id) {
+    _id
+    title
+    date
+  }
+}
+    `;
+export type WidgetRemoveByIdMutationFn = ApolloReactCommon.MutationFunction<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>;
+export type WidgetRemoveByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>, 'mutation'>;
+
+    export const WidgetRemoveByIdComponent = (props: WidgetRemoveByIdComponentProps) => (
+      <ApolloReactComponents.Mutation<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables> mutation={WidgetRemoveByIdDocument} {...props} />
+    );
+    
+export type WidgetRemoveByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables> & TChildProps;
+export function withWidgetRemoveById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  WidgetRemoveByIdMutation,
+  WidgetRemoveByIdMutationVariables,
+  WidgetRemoveByIdProps<TChildProps>>) {
+    return ApolloReactHoc.withMutation<TProps, WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables, WidgetRemoveByIdProps<TChildProps>>(WidgetRemoveByIdDocument, {
+      alias: 'widgetRemoveById',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useWidgetRemoveByIdMutation__
+ *
+ * To run a mutation, you first call `useWidgetRemoveByIdMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useWidgetRemoveByIdMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [widgetRemoveByIdMutation, { data, loading, error }] = useWidgetRemoveByIdMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useWidgetRemoveByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>) {
+        return ApolloReactHooks.useMutation<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>(WidgetRemoveByIdDocument, baseOptions);
+      }
+export type WidgetRemoveByIdMutationHookResult = ReturnType<typeof useWidgetRemoveByIdMutation>;
+export type WidgetRemoveByIdMutationResult = ApolloReactCommon.MutationResult<WidgetRemoveByIdMutation>;
+export type WidgetRemoveByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetRemoveByIdMutation, WidgetRemoveByIdMutationVariables>;
+export const WidgetUpdateByIdDocument = gql`
+    mutation WidgetUpdateById($id: ObjectId!, $title: String!, $date: DateTime!) {
+  WidgetUpdateById(input: {title: $title, date: $date}, id: $id) {
+    _id
+    title
+    date
+  }
+}
+    `;
+export type WidgetUpdateByIdMutationFn = ApolloReactCommon.MutationFunction<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>;
+export type WidgetUpdateByIdComponentProps = Omit<ApolloReactComponents.MutationComponentOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>, 'mutation'>;
+
+    export const WidgetUpdateByIdComponent = (props: WidgetUpdateByIdComponentProps) => (
+      <ApolloReactComponents.Mutation<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables> mutation={WidgetUpdateByIdDocument} {...props} />
+    );
+    
+export type WidgetUpdateByIdProps<TChildProps = {}> = ApolloReactHoc.MutateProps<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables> & TChildProps;
+export function withWidgetUpdateById<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  WidgetUpdateByIdMutation,
+  WidgetUpdateByIdMutationVariables,
+  WidgetUpdateByIdProps<TChildProps>>) {
+    return ApolloReactHoc.withMutation<TProps, WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables, WidgetUpdateByIdProps<TChildProps>>(WidgetUpdateByIdDocument, {
+      alias: 'widgetUpdateById',
+      ...operationOptions
+    });
+};
+
+/**
+ * __useWidgetUpdateByIdMutation__
+ *
+ * To run a mutation, you first call `useWidgetUpdateByIdMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useWidgetUpdateByIdMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [widgetUpdateByIdMutation, { data, loading, error }] = useWidgetUpdateByIdMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      title: // value for 'title'
+ *      date: // value for 'date'
+ *   },
+ * });
+ */
+export function useWidgetUpdateByIdMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>) {
+        return ApolloReactHooks.useMutation<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>(WidgetUpdateByIdDocument, baseOptions);
+      }
+export type WidgetUpdateByIdMutationHookResult = ReturnType<typeof useWidgetUpdateByIdMutation>;
+export type WidgetUpdateByIdMutationResult = ApolloReactCommon.MutationResult<WidgetUpdateByIdMutation>;
+export type WidgetUpdateByIdMutationOptions = ApolloReactCommon.BaseMutationOptions<WidgetUpdateByIdMutation, WidgetUpdateByIdMutationVariables>;
