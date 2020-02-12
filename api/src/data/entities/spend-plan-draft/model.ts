@@ -4,6 +4,7 @@ import { Field, InputType, ObjectType } from 'type-graphql';
 
 import { User } from '../user/model';
 import { Ref } from '../../../types';
+import { Directorate } from '../directorate/model';
 
 @ObjectType()
 export class SpendPlanDraft extends Typegoose {
@@ -12,11 +13,15 @@ export class SpendPlanDraft extends Typegoose {
 
     @Field()
     @Property({ required: true })
-    title: string;
+    fiscalYear: string;
 
-    @Field({ nullable: true })
-    @Property({ required: false })
-    date: Date;
+    @Field(type => Directorate)
+    @Property({ ref: Directorate })
+    directorate: Ref<Directorate>;
+
+    @Field()
+    @Property()
+    json: string;
 
     @Property({ default: () => Date.now() })
     @Field()
@@ -45,8 +50,11 @@ export const SpendPlanDraftModel = new SpendPlanDraft().getModelForClass(
 @InputType()
 export class SpendPlanDraftInput implements Partial<SpendPlanDraft> {
     @Field()
-    title: string;
+    fiscalYear: string;
+
+    @Field(type => Directorate)
+    directorate: Directorate;
 
     @Field()
-    date: Date;
+    json: string;
 }

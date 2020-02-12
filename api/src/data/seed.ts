@@ -38,7 +38,10 @@ export async function seedDatabase() {
     );
     const mfpIndicators = await createMfpIndicators(defaultUser);
     const programs = await createPrograms(defaultUser);
-    const spendPlanDrafts = await createSpendPlanDrafts(defaultUser);
+    const spendPlanDrafts = await createSpendPlanDrafts(
+        defaultUser,
+        directorates,
+    );
 
     return {
         user: defaultUser,
@@ -147,20 +150,29 @@ async function createPrograms(user: User) {
     return (await ProgramModel.create(itemsToCreate)) as Program[];
 }
 
-async function createSpendPlanDrafts(user: User) {
+async function createSpendPlanDrafts(
+    user: User,
+    directorates: Directorate[],
+) {
     return await SpendPlanDraftModel.create([
         {
-            title: 'SOJ3',
+            fiscalYear: '2012',
+            directorate: chance.pickone(directorates)._id,
+            json: '{}',
             createdBy: user._id,
             updatedBy: user._id,
         },
         {
-            title: 'SOJ6',
+            fiscalYear: '2013',
+            directorate: chance.pickone(directorates)._id,
+            json: '{}',
             createdBy: user._id,
             updatedBy: user._id,
         },
         {
-            title: 'SOJ69',
+            fiscalYear: '2020',
+            directorate: chance.pickone(directorates)._id,
+            json: '{}',
             createdBy: user._id,
             updatedBy: user._id,
         },

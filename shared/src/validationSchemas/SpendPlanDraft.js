@@ -5,9 +5,13 @@ const {
 } = require('./helpers');
 
 const defaultSchema = Yup.object().shape({
-    title: Yup.string()
+    fiscalYear: Yup.string()
         .trim()
-        .required('Title is required'),
+        .required('Fiscal year is required'),
+    directorate: Yup.object(),
+    json: Yup.string()
+        .trim()
+        .required('Spend plan data is required'),
 });
 
 module.exports = {
