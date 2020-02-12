@@ -6,6 +6,7 @@ import expendituretype from './modules/expendituretype/routes';
 import mfpindicator from './modules/mfpindicator/routes';
 import program from './modules/program/routes';
 import userprofile from './modules/userprofile/routes';
+import spendPlanDraft from './modules/spend-plan-draft/routes';
 import { RouteDictionary } from './interfaces';
 
 // Combined routes
@@ -18,4 +19,5 @@ export const routeConfig: RouteDictionary = Object.assign(
     mfpindicator,
     program,
     userprofile,
+    spendPlanDraft,
 );
