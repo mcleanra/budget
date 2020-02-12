@@ -20,6 +20,7 @@
     },
     "private": true,
     "workspaces": [
-        "packages/*"
+        "packages/*",
+		"shared"
     ]
 }
